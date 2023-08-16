@@ -5,7 +5,7 @@ services:
   fastapi:
     environment:
       CORS_HOST: http://localhost:3000
-      DATABASE_URL: postgresql://code_with_me:code_with_me@postgres-1/code_with_me
+      DATABASE_URL: postgresql://code_with_me:code_with_me@postgres/code_with_me
     build:
       context: api
       dockerfile: Dockerfile.dev
