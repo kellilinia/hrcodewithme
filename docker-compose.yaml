@@ -1,11 +1,13 @@
 volumes:
   postgres-data:
     external: true
+  pg-admin:
+    external: true
 services:
   fastapi:
     environment:
       CORS_HOST: http://localhost:3000
-      DATABASE_URL: postgresql://code_with_me:code_with_me@postgres-1/code_with_me
+      DATABASE_URL: postgresql://code_with_me:code_with_me@postgres/code_with_me
     build:
       context: api
       dockerfile: Dockerfile.dev
@@ -13,7 +15,6 @@ services:
       - 8000:8000
     volumes:
       - ./api:/app
-
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
@@ -28,7 +29,6 @@ services:
       HOST: "0.0.0.0"
       PUBLIC_URL: http://localhost:3000
       REACT_APP_API_HOST: ${REACT_APP_API_HOST}
-
   postgres:
     image: postgres:14.5-bullseye
     volumes:
@@ -39,3 +39,13 @@ services:
       POSTGRES_DB: code_with_me
     ports:
       - 15432:5432
+  pg-admin:
+    image: dpage/pgadmin4
+    volumes:
+      - pg-admin:/var/lib/pgadmin
+    ports:
+      - 8082:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: silgon10@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: code_with_me
+      PGADMIN_DISABLE_POSTFIX: 1
