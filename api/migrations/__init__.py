@@ -89,6 +89,7 @@ async def current_migrations(db_url: str) -> list[MigrationRecord]:
 
 
 async def up(db_url, to=LATEST, dir=os.path.dirname(__file__)):
+    print("DB URL", db_url)
     await ensure_migrations_table(db_url)
     migrations = await read_migrations(dir)
     applied = await current_migrations(db_url)
