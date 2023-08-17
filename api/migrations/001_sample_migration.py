@@ -1,5 +1,5 @@
 steps = [
-    [
+     [
         # "Up" SQL statement
         """
         CREATE TABLE dummy (
