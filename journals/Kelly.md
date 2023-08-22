@@ -1,4 +1,24 @@
 #### STANDUP
+### 8/21/23
+## TEAM
+- Kelly presented:
+     - Yesterday we completed all endpoints for Signup and are still working on the remaining endpoints
+     - Will move over to authentication after completion of endpoints
+     - No barriers at this time
+
+## SOLO
+- Create merge request for the four Signup endpoints I created yesterday, get the data reviewed and approved for team's access
+- Start shifting over toward authentication research
+
+### 8/21/23
+## TEAM
+- Miguel presented:
+    - Thursday we completed all checkpoints requested, including the Signup create account endpoint and a successful merge request and approval
+    - Today we will go through any readings/videos, and all members will begin the outline of their endpoints
+    - No barriers at this time
+
+## SOLO
+- Work on the remaining endpoints for Signup and read over any documentation I need to complete them
 
 ### 8/17/23
 ## TEAM
@@ -36,7 +56,41 @@
 
 #### DAILY JOURNAL
 
+### 8/22/23
+
+Focus for tomorrow:
+- mob code with group on authentication
+
+
+### 8/21/23
+- Group discussed our priorities for the day and the week
+- I removed "from psycopg.errors import ForeignKeyViolation" from routers/accounts_routers.py file since it was not in use
+- I added a response_model for AccountsOut and a response_model for Error to the routers/accounts_routers.py file
+- Added Error model in queries/accounts.py file
+- Commented out the error handling data for now, so all team members can decide how they wish to error handle at a later time
+- Created FastAPI endpoint GET request for getting a list of accounts
+- Created FastAPI endpoint GET request for getting an account's details
+- Created FastAPI endpoint PUT request for updating an account
+- Created FastAPI endpoint DELETE request for deleting an account
+- Verified that all endpoints are working in Swagger
+- Added account_in_to_out function to queries/accounts.py file
+- Added record_to_account_out function to queries/accounts.py file
+- Added some minor error handling, but will go over this with the team to optimize accordingly
+
+Focus for tomorrow:
+- Submit merge request for Account endpoints list of accounts, account details, updating account, and deleting account
+- Read through documentation and catch up on any other material
+- Start researching authentication
+
 ### 8/17/23
+- Kelly shared her screen and team worked together to create first FastAPI endpoint for Signup, which was verified in swagger at localhost:8000/docs by sending a POST request successfully with the creation of unique ids:
+    - Created "routers" folder, and create a accounts_routers.py file, with a POST request for the path /accounts
+    - Created a pool.py file, and brought in pool import and URL (fixed the URL by removing the .get, which was the final correction for the recurring error we kept getting off and on)
+    - Created the accounts.py file with the models AccountIn, AccountOut, AccountRepository
+- Created a merge request with proper documentation (Kelly requested this)
+- Merge request was tested and accepted (by Jaime)
+- Kelly merged to main and team pulled updated file
+- Team updated leadership over the completion of tasks for this week
 
 
 ### 8/16/23
