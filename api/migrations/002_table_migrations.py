@@ -7,7 +7,7 @@ steps = [
             id SERIAL PRIMARY KEY NOT NULL,
             email VARCHAR(254) NOT NULL UNIQUE,
             username VARCHAR(20) NOT NULL UNIQUE,
-            password VARCHAR(15) NOT NULL,
+            password VARCHAR(250) NOT NULL,
             first_name VARCHAR(50) NOT NULL,
             last_name VARCHAR(50) NOT NULL,
             coder BOOLEAN
