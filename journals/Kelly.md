@@ -1,5 +1,26 @@
 #### STANDUP
-### 8/21/23
+### 8/24/23
+## TEAM
+- Silvano presented:
+    - Yesterday we worked on authentication
+    - Today we will work on wrapping up the endpoints and protecting them
+    - No blockers
+
+## SOLO
+- Same as above since we worked together as a group on Authentication
+
+
+### 8/23/23
+## TEAM
+- jaime presented:
+     - Yesterday we worked on our endpoints
+     - Today we will work on Authentication together as a group, and then move back over to our endpoints
+     - No blockers
+
+## SOLO
+- Same as above since we worked together as a group on Authentication
+
+### 8/22/23
 ## TEAM
 - Kelly presented:
      - Yesterday we completed all endpoints for Signup and are still working on the remaining endpoints
@@ -56,10 +77,28 @@
 
 #### DAILY JOURNAL
 
+### 8/23/23
+- Kelly presented:
+    - We worked on authentication today as a group
+        - Created authentication.py file, creating the MyAuthenticator class with the get_account_data, get_account_getter, and get_hashed_password, get_account_data_for_cookie functions plus the authenticator variable provided in the jwtdown documentation
+        - Generated signing key by typing in "openssl rand -hex 32" into command line
+        - Added signing key data into the docker-compose.yml file
+        - Updated fastapi version from 0.78.0 to 0.81.0 (since it was necessary to work with jwtdown), and added jwtdown-fastapi>=0.2.0 to file
+        -  Added the function get_one_username in the queries/accounts.py file (added due to an error i was receiving regarding the username equaling an integer - this was my way to work around the problem)
+        - Created the async function get_token to be able to protect necessary endpoints
+        - protected the get_all, get_one_account, update_account, and delete_account endpoints
+        - Verified that all endpoints worked appropriately in swagger, with the jwt generation, and the requirement for someone to be signed in to see the account details, list, update the account, or delete the account
+        - Verified all information with the team
+        - git added, committed, and pushed to my origin branch
+        - Created a merge request for the authentication and protected endpoints
+        - Merge request was verified by Silvano and approved
+        - I merged the updated information from my branch Signin to the main, and all members pulled the updated main to their local and verified that the updates were working
+
+
 ### 8/22/23
 
 Focus for tomorrow:
-- mob code with group on authentication
+- Mob code with group on authentication
 
 
 ### 8/21/23

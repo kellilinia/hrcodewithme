@@ -6,6 +6,10 @@ class Error(BaseModel):
     message: str
 
 
+class DuplicateAccountError(ValueError):
+    pass
+
+
 class AccountIn(BaseModel):
     email: str
     username: str
@@ -23,6 +27,10 @@ class AccountOut(BaseModel):
     last_name: str
     coder: bool
 
+
+class AccountOutWithPassword(AccountOut):
+    password: str
+
 class AccountRepository:
     def get_one(self, account_id: int) -> Optional[AccountOut]:
         try:
@@ -33,17 +41,17 @@ class AccountRepository:
                     # Run our SELECT statement
                     result = db.execute(
                         """
-                        SELECT id
-                          , email
-                          , username
-                          , password
-                          , first_name
-                          , last_name
-                          , coder
+                        SELECT id,
+                        email,
+                        username,
+                        password,
+                        first_name,
+                        last_name,
+                        coder
                           FROM accounts
                         WHERE id = %s
                         """,
-                        [account_id]
+                        [account_id],
                     )
                     record = result.fetchone()
                     if record is None:
@@ -52,6 +60,39 @@ class AccountRepository:
         except Exception as e:
             print(e)
             return {"message": "unable to get account"}
+
+
+    def get_one_username(self, username: str) -> Optional[AccountOut]:
+        try:
+            # connect to database
+            with pool.connection() as conn:
+                # get a cursor (something to run SQL with)
+                with conn.cursor() as db:
+                    # Run our SELECT statement
+                    result = db.execute(
+                        """
+                        SELECT id,
+                        email,
+                        username,
+                        password,
+                        first_name,
+                        last_name,
+                        coder
+                          FROM accounts
+                        WHERE username = %s
+                        """,
+                        [username],
+                    )
+                    record = result.fetchone()
+                    print(record)
+                    if record is None:
+                        return None
+                    return self.record_to_account_out(record)
+        except Exception as e:
+            print(e)
+            return {"message": "unable to get account"}
+
+
 
 
 
@@ -141,7 +182,7 @@ class AccountRepository:
             return {"message": "unable to get all accounts"}
 
 
-    def create(self, account: AccountIn) -> AccountOut:
+    def create(self, account: AccountIn) -> AccountOutWithPassword:
         try:
             # connect to database
             with pool.connection() as conn:

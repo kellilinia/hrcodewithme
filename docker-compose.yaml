@@ -8,6 +8,7 @@ services:
     environment:
       CORS_HOST: http://localhost:3000
       DATABASE_URL: postgresql://code_with_me:code_with_me@postgres/code_with_me
+      SIGNING_KEY: 8cffd5e84c83a541300e20f8a42ec5184eac016e7a8f48a17e5fb692cb88b93e
     build:
       context: api
       dockerfile: Dockerfile.dev
@@ -15,6 +16,8 @@ services:
       - 8000:8000
     volumes:
       - ./api:/app
+    depends_on:
+      - postgres
   ghi:
     image: node:lts-bullseye
     command: /bin/bash run.sh
