@@ -1,4 +1,17 @@
 #### STANDUP
+
+### 8/25/23
+## TEAM
+- Miguel presented
+    - Yesterday we went through the remainder of authentication, and protected our first few endpoints
+    - Today we will complete the remainder of our endpoints and protect them
+    - No blockers
+
+
+## SOLO
+- Will support team members with finishing up their endpoints and protecting them
+
+
 ### 8/24/23
 ## TEAM
 - Silvano presented:
@@ -76,6 +89,14 @@
 
 
 #### DAILY JOURNAL
+
+
+### 8/25/23
+- Supported team members with their endpoints
+-
+
+### 8/24/23
+- Supported team members with their endpoints
 
 ### 8/23/23
 - Kelly presented:
