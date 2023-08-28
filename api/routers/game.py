@@ -1,9 +1,9 @@
-from typing import List
 from fastapi import APIRouter, Depends, HTTPException, Request
-from queries.employers import SearchOut, SearchIn, SearchRepository
 from queries.accounts import AccountOut
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
+from typing import List
+from queries.game import GameIn, GameQueries, GameOut
 
 
 class AccountToken(Token):
@@ -26,29 +26,30 @@ async def get_token(
         }
 
 
-def is_employer(
+@router.post("/game", response_model=GameOut)
+def create_game(
+    Game: GameIn,
     account_data: dict = Depends(authenticator.get_current_account_data),
+    repo: GameQueries = Depends(),
 ):
-    coder = account_data.get("coder")
-    if coder is False:
-        return True
-    else:
-        raise HTTPException(
-            status_code=405,
-            detail="You do not have an employer account to access this page.",
-        )
+    return repo.create(Game)
 
 
-@router.get("/employer/search", response_model=List[SearchOut])
-def employer_search(
-    search_criteria: SearchIn = Depends(),
+@router.get("/games/", response_model=List[GameOut])
+async def get_all_games(
     account_data: dict = Depends(authenticator.get_current_account_data),
-    employer: dict = Depends(is_employer),
 ):
-    repo = SearchRepository()
-    try:
-        search_results = repo.employer_search(search_criteria)
-        return search_results
-    except Exception as e:
-        print(e)
-        raise HTTPException(status_code=400, detail=str(e))
+    game_queries = GameQueries()
+    return game_queries.get_all()
+
+
+@router.get("/games/{game_id}", response_model=GameOut)
+async def get_game(
+    game_id: int,
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
+    game_queries = GameQueries()
+    game = game_queries.get_by_id(game_id)
+    if game is None:
+        raise HTTPException(status_code=404, detail="Game not found")
+    return game
