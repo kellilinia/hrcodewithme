@@ -1,5 +1,16 @@
 #### STANDUP
 
+### 8/28/23
+## TEAM
+- Kelly presented
+    - Friday we worked on remaining endpoints
+    - Today we have one last endpoint to finish up, and need to protect it - plan on moving over to front end later today
+    - We do have a blocker regarding our profile page endpoint - cannot create an account - will need assistance from a SEIR or an instructor on this
+
+
+## SOLO
+
+
 ### 8/25/23
 ## TEAM
 - Miguel presented
@@ -91,9 +102,13 @@
 #### DAILY JOURNAL
 
 
+### 8/28/23
+
+
+
 ### 8/25/23
 - Supported team members with their endpoints
--
+- Went through and approved Jaime's merge request for employer search
 
 ### 8/24/23
 - Supported team members with their endpoints
