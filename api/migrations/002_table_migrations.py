@@ -1,5 +1,4 @@
 steps = [
-
     [
         # "Up" SQL statement
         """
@@ -18,7 +17,7 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE accounts;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -43,7 +42,7 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE coders;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
@@ -56,24 +55,23 @@ steps = [
         # "Down" SQL statement
         """
         DROP TABLE employers;
-        """
+        """,
     ],
     [
         # "Up" SQL statement
         """
         CREATE TABLE game (
-            game_id SERIAL PRIMARY KEY NOT NULL,
-            player_id INT REFERENCES coders(coder_id),
-            avatar_url VARCHAR(254) REFERENCES coders(avatar_url),
+            id SERIAL PRIMARY KEY NOT NULL,
+            language VARCHAR(10),
             difficulty VARCHAR(10) NOT NULL,
             question TEXT NOT NULL,
-            right_answers TEXT NOT NULL,
-            wrong_answers TEXT NOT NULL
+            answer TEXT NOT NULL,
+            wrong_answer TEXT NOT NULL
         );
         """,
         # "Down" SQL statement
         """
         DROP TABLE game;
-        """
+        """,
     ],
 ]

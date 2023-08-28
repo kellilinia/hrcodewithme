@@ -2,6 +2,7 @@ from queries.pool import pool
 from pydantic import BaseModel
 from typing import Union, List, Optional
 
+
 class Error(BaseModel):
     message: str
 
@@ -18,6 +19,7 @@ class AccountIn(BaseModel):
     last_name: str
     coder: bool
 
+
 class AccountOut(BaseModel):
     id: int
     email: str
@@ -30,6 +32,7 @@ class AccountOut(BaseModel):
 
 class AccountOutWithPassword(AccountOut):
     password: str
+
 
 class AccountRepository:
     def get_one(self, account_id: int) -> Optional[AccountOut]:
@@ -61,7 +64,6 @@ class AccountRepository:
             print(e)
             return {"message": "unable to get account"}
 
-
     def get_one_username(self, username: str) -> Optional[AccountOut]:
         try:
             # connect to database
@@ -92,10 +94,6 @@ class AccountRepository:
             print(e)
             return {"message": "unable to get account"}
 
-
-
-
-
     def delete(self, account_id: int) -> bool:
         try:
             # connect to database
@@ -108,15 +106,16 @@ class AccountRepository:
                         DELETE FROM accounts
                         WHERE id = %s
                         """,
-                        [account_id]
+                        [account_id],
                     )
                     return True
         except Exception as e:
             print(e)
             return False
 
-
-    def update(self, account_id: int, account: AccountIn) -> Union[AccountOut, Error]:
+    def update(
+        self, account_id: int, account: AccountIn
+    ) -> Union[AccountOut, Error]:
         try:
             # connect to database
             with pool.connection() as conn:
@@ -141,15 +140,13 @@ class AccountRepository:
                             account.first_name,
                             account.last_name,
                             account.coder,
-                            account_id
-                        ]
+                            account_id,
+                        ],
                     )
                     return self.account_in_to_out(account_id, account)
         except Exception as e:
             print(e)
             return {"message": "unable to update"}
-
-
 
     def get_all(self) -> Union[Error, List[AccountOut]]:
         try:
@@ -181,7 +178,6 @@ class AccountRepository:
             print(e)
             return {"message": "unable to get all accounts"}
 
-
     def create(self, account: AccountIn) -> AccountOutWithPassword:
         try:
             # connect to database
@@ -203,8 +199,8 @@ class AccountRepository:
                             account.password,
                             account.first_name,
                             account.last_name,
-                            account.coder
-                        ]
+                            account.coder,
+                        ],
                     )
                     id = result.fetchone()[0]
                     # old_data = account.dict()
@@ -215,11 +211,9 @@ class AccountRepository:
         except Exception:
             return {"message": "unable to create"}
 
-
     def account_in_to_out(self, id: int, account: AccountIn):
         old_data = account.dict()
         return AccountOut(id=id, **old_data)
-
 
     def record_to_account_out(self, record):
         return AccountOut(
