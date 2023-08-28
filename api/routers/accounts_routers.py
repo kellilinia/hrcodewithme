@@ -1,34 +1,45 @@
-from fastapi import APIRouter, Depends, Response, HTTPException, status, Request
-from queries.accounts import Error, AccountIn, AccountRepository, AccountOut, Error, DuplicateAccountError
+from fastapi import (
+    APIRouter,
+    Depends,
+    Response,
+    HTTPException,
+    status,
+    Request,
+)
+from queries.accounts import (
+    Error,
+    AccountIn,
+    AccountRepository,
+    AccountOut,
+    Error,
+    DuplicateAccountError,
+)
 from typing import Union, List, Optional
 from jwtdown_fastapi.authentication import Token
 from authenticator import authenticator
 from pydantic import BaseModel
 
 
-
 class AccountForm(BaseModel):
     username: str
     password: str
 
+
 class AccountToken(Token):
     account: AccountOut
+
 
 class HttpError(BaseModel):
     detail: str
 
 
-
-
 router = APIRouter()
-
-
 
 
 @router.get("/token", response_model=AccountToken | None)
 async def get_token(
     request: Request,
-    account: AccountOut = Depends(authenticator.try_get_current_account_data)
+    account: AccountOut = Depends(authenticator.try_get_current_account_data),
 ) -> AccountToken | None:
     if account and authenticator.cookie_name in request.cookies:
         return {
@@ -36,7 +47,6 @@ async def get_token(
             "type": "Bearer",
             "account": account,
         }
-
 
 
 @router.post("/accounts", response_model=AccountToken | HttpError)
@@ -61,16 +71,12 @@ async def create_account(
     return AccountToken(account=account, **token.dict())
 
 
-
 @router.get("/accounts", response_model=Union[List[AccountOut], Error])
 def get_all(
     repo: AccountRepository = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     return repo.get_all()
-
-
-
 
 
 @router.put("/accounts/{account_id}", response_model=Union[AccountOut, Error])
@@ -83,20 +89,13 @@ def update_account(
     return repo.update(account_id, account)
 
 
-
-
-
 @router.delete("/accounts/{account_id}", response_model=bool)
 def delete_account(
     account_id: int,
     repo: AccountRepository = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
-
 ) -> bool:
     return repo.delete(account_id)
-
-
-
 
 
 @router.get("/accounts/{account_id}", response_model=Optional[AccountOut])
@@ -105,7 +104,6 @@ def get_one_account(
     response: Response,
     repo: AccountRepository = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
-
 ) -> AccountOut:
     account = repo.get_one(account_id)
     if account is None:
