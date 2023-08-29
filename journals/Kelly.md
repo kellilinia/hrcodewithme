@@ -1,5 +1,18 @@
 #### STANDUP
 
+### 8/29/23
+## TEAM
+- Jaime presented
+    - Yesterday we moved passed our blocker and worked on the final endpoints that were giving us troubles
+    - Today we are finishing up our last endpoint and merge request, and are working on front-end together as a group
+    - No blockers at this time
+
+
+## SOLO
+- Worked on Miguel's endpoints last night
+- Researching front end with Jaime as paired programmers (React/authentication)
+
+
 ### 8/28/23
 ## TEAM
 - Kelly presented
@@ -9,7 +22,7 @@
 
 
 ## SOLO
-
+- Same as above since we worked as a group on Miguel's endpoint
 
 ### 8/25/23
 ## TEAM
@@ -101,9 +114,17 @@
 
 #### DAILY JOURNAL
 
+### 8/29/23
+- Miguel finishing up his endpoints and protecting them, and will send a merge request to be approved today
+- Silvano added try and accept error handling for his endpoints and sent his merge request - Jaime reviewed and approved
+- Jaime and I to work on front-end together for React and authentication
 
 ### 8/28/23
-
+- Worked on Miguel's endpoint errors
+- Spoke to Paul, and he suggested we should create a unique identifier in the accounts table to Miguel to pull form
+- Went through Silvano's endpoints (create game, game details, and list of games) and approved it
+- Silvano merged his endpoint and all team members pulled the changes to local main and verified it's functionality
+- Spent the evening working through Miguel's endpoints, and were finally able to fix the outstanding errors with Miguel's endpoint
 
 
 ### 8/25/23
