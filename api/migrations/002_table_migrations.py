@@ -24,7 +24,7 @@ steps = [
         """
         CREATE TABLE coders (
             coder_id INT REFERENCES accounts(id) UNIQUE,
-            avatar_url VARCHAR(254) UNIQUE,
+            avatar_url VARCHAR(254),
             bio TEXT,
             git_url VARCHAR(254),
             personal_interests TEXT,
