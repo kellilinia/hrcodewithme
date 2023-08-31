@@ -18,7 +18,7 @@ router = APIRouter()
 
 
 @router.get("/token", response_model=AccountToken | None)
-async def get_token(
+async def get_token_profile(
     request: Request,
     account: AccountOut = Depends(authenticator.try_get_current_account_data),
 ) -> AccountToken | None:

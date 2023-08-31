@@ -1,10 +1,12 @@
 import { NavLink } from "react-router-dom";
+import useToken from "@galvanize-inc/jwtdown-for-react";
 
 function Nav() {
+  const { logout } = useToken();
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-success">
       <div className="container-fluid">
-        <NavLink className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/signup">
           Code with me
         </NavLink>
         <button
@@ -21,13 +23,13 @@ function Nav() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/">
+              <NavLink className="nav-link" to="/signup">
                 Homepage
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/signin">
-                Sign in
+              <NavLink className="nav-link" to="/token">
+                Login
               </NavLink>
             </li>
             <li className="nav-item">
@@ -53,6 +55,11 @@ function Nav() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/employer/search">
                 Employer Search
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/signin" onClick={logout}>
+                Logout
               </NavLink>
             </li>
           </ul>
