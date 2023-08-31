@@ -28,7 +28,11 @@ class GameQueries:
                     result = db.execute(
                         """
                         INSERT INTO Game
-                            (language, question, answer, wrong_answer, difficulty)
+                            (language,
+                            question,
+                            answer,
+                            wrong_answer,
+                            difficulty)
                         VALUES
                             (%s, %s, %s, %s, %s)
                             RETURNING id;
@@ -55,7 +59,12 @@ class GameQueries:
                 with conn.cursor() as db:
                     db.execute(
                         """
-                        SELECT id, language, question, answer, wrong_answer, difficulty
+                        SELECT id,
+                        language,
+                        question,
+                        answer,
+                        wrong_answer,
+                        difficulty
                         FROM Game;
                         """
                     )

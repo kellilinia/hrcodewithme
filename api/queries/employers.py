@@ -51,24 +51,26 @@ class SearchRepository:
         with pool.connection() as conn:
             with conn.cursor() as db:
                 # skills_string = ", ".join(selected_skills)
-                query = f"""
-                    SELECT coders.coder_id,
-                        accounts.first_name,
-                        accounts.last_name,
-                        coders.fullstack,
-                        coders.frontend,
-                        coders.backend,
-                        coders.javascript,
-                        coders.python,
-                        coders.java,
-                        coders.html,
-                        coders.coding_since
-                    FROM coders
-                    INNER JOIN accounts
-                    ON coders.coder_id = accounts.id
-                    WHERE {' AND '.join([f'{field} = true' for field in selected_skills])}
-                    AND coders.open_to_work = 'true'
-                """
+                selected_skills_conditions = " AND ".join(
+                    [f"{field} = true" for field in selected_skills]
+                )
+                query = (
+                    "SELECT coders.coder_id, "
+                    "accounts.first_name, "
+                    "accounts.last_name, "
+                    "coders.fullstack, "
+                    "coders.frontend, "
+                    "coders.backend, "
+                    "coders.javascript, "
+                    "coders.python, "
+                    "coders.java, "
+                    "coders.html, "
+                    "coders.coding_since "
+                    "FROM coders "
+                    "INNER JOIN accounts ON coders.coder_id = accounts.id "
+                    "WHERE " + selected_skills_conditions + " "
+                    "AND coders.open_to_work = 'true'"
+                )
                 result = db.execute(query)
                 rows = result.fetchall()
 

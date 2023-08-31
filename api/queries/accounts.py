@@ -150,18 +150,23 @@ class AccountRepository:
 
     def get_all(self) -> Union[Error, List[AccountOut]]:
         try:
-            # connect to database
             with pool.connection() as conn:
-                # get a cursor (something to run SQL with)
                 with conn.cursor() as db:
                     # Run our SELECT statement
                     result = db.execute(
                         """
-                        SELECT id, email, username, password, first_name, last_name, coder
+                        SELECT id,
+                        email,
+                        username,
+                        password,
+                        first_name,
+                        last_name,
+                        coder
                         FROM accounts
                         ORDER BY id;
                         """
                     )
+
                     return [
                         AccountOut(
                             id=record[0],
@@ -172,7 +177,7 @@ class AccountRepository:
                             last_name=record[5],
                             coder=record[6],
                         )
-                        for record in db
+                        for record in result
                     ]
         except Exception as e:
             print(e)
@@ -188,7 +193,12 @@ class AccountRepository:
                     result = db.execute(
                         """
                         INSERT INTO accounts
-                        (email, username, password, first_name, last_name, coder)
+                        (email,
+                        username,
+                        password,
+                        first_name,
+                        last_name,
+                        coder)
                         VALUES
                         (%s, %s, %s, %s, %s, %s)
                         RETURNING id;

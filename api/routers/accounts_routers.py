@@ -7,7 +7,6 @@ from fastapi import (
     Request,
 )
 from queries.accounts import (
-    Error,
     AccountIn,
     AccountRepository,
     AccountOut,
