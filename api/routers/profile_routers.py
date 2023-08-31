@@ -6,9 +6,10 @@ from queries.accounts import AccountOut
 from queries.profile import (
     Error,
     ProfileIn,
-    ProfileOut, 
+    ProfileOut,
     ProfileRepository,
-    )
+)
+
 
 class AccountToken(Token):
     account: AccountOut
@@ -32,7 +33,7 @@ async def get_token_profile(
 
 @router.get("/profiles", response_model=List[ProfileOut])
 async def get_all_profiles(
-    account_data: dict = Depends(authenticator.get_current_account_data)
+    account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     repo = ProfileRepository()
     try:
@@ -41,7 +42,6 @@ async def get_all_profiles(
     except Exception as e:
         print(e)
         raise HTTPException(status_code=400, detail=str(e))
-    
 
 
 @router.put("/profile/{coder_id}", response_model=Union[ProfileOut, Error])
@@ -54,15 +54,12 @@ def update_profile(
     return repo.update_profile(coder_id, profile)
 
 
-
 @router.post("/profile")
 def create_profile(
-    profile: ProfileIn,
-    repo: ProfileRepository = Depends()
+    profile: ProfileIn, repo: ProfileRepository = Depends()
 ) -> Union[ProfileOut, Error]:
     # Proceed with profile creation if account exists
     return repo.create_profile(profile)
-
 
 
 @router.get("/profile/{account_id}", response_model=Optional[ProfileOut])

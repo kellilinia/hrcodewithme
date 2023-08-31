@@ -9,7 +9,7 @@ const SignupForm = () => {
     const [password, setPassword] = useState("");
     const [first_name, setFirstName] = useState("");
     const [last_name, setLastName] = useState("");
-    const [coder, setCoder] = useState(true);
+    // const [coder, setCoder] = useState(true);
 
     const { register } = useToken();
     const navigate = useNavigate();
@@ -22,7 +22,7 @@ const SignupForm = () => {
         password: password,
         first_name: first_name,
         last_name: last_name,
-        coder: coder,
+        // coder: coder,
     };
     register(
       accountData,

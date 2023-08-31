@@ -1,10 +1,12 @@
 from queries.pool import pool
-from pydantic import BaseModel 
+from pydantic import BaseModel
 from typing import Union, Optional, List
 from fastapi import HTTPException
 
+
 class Error(BaseModel):
     message: str
+
 
 class ProfileIn(BaseModel):
     coder_id: int
@@ -21,6 +23,7 @@ class ProfileIn(BaseModel):
     python: bool = False
     java: bool = False
     html: bool = False
+
 
 class ProfileOut(BaseModel):
     coder_id: int
@@ -49,35 +52,48 @@ class ProfileRepository:
                     db.execute(
                         """
                         INSERT INTO coders
-                            (coder_id, 
-                            avatar_url, 
-                            bio, 
-                            git_url, 
-                            personal_interests, 
-                            coding_since, 
+                            (coder_id,
+                            avatar_url,
+                            bio,
+                            git_url,
+                            personal_interests,
+                            coding_since,
                             open_to_work,
-                            fullstack, 
-                            frontend, 
-                            backend, 
-                            javascript, 
-                            python, 
-                            java, 
+                            fullstack,
+                            frontend,
+                            backend,
+                            javascript,
+                            python,
+                            java,
                             html)
                         VALUES
-                        (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                        RETURNING coder_id, 
-                            avatar_url, 
-                            bio, 
-                            git_url, 
-                            personal_interests, 
-                            coding_since, 
+                        (%s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s,
+                        %s)
+                        RETURNING coder_id,
+                            avatar_url,
+                            bio,
+                            git_url,
+                            personal_interests,
+                            coding_since,
                             open_to_work,
-                            fullstack, 
-                            frontend, 
-                            backend, 
-                            javascript, 
-                            python, 
-                            java, 
+                            fullstack,
+                            frontend,
+                            backend,
+                            javascript,
+                            python,
+                            java,
                             html;
                         """,
                         [
@@ -95,7 +111,7 @@ class ProfileRepository:
                             profile.python,
                             profile.java,
                             profile.html,
-                        ]
+                        ],
                     )
                 except Exception as e:
                     print(e)
@@ -104,48 +120,45 @@ class ProfileRepository:
                 conn.commit()
                 print(new_coder_id)
                 return self.coder_profile_in_to_out(new_coder_id, profile)
-       
+
     def coder_profile_in_to_out(self, coder_id: int, profile: ProfileIn):
         profile_data = profile.dict()
         return ProfileOut(**profile_data)
-    
-
 
     def get_one_profile(self, coder_id: int) -> Optional[ProfileOut]:
-            try:
-                with pool.connection() as conn:
-                    with conn.cursor() as db:
-                        result = db.execute(
-                            """
-                            SELECT coder_id, 
-                            avatar_url, 
-                            bio, 
-                            git_url, 
+        try:
+            with pool.connection() as conn:
+                with conn.cursor() as db:
+                    result = db.execute(
+                        """
+                            SELECT coder_id,
+                            avatar_url,
+                            bio,
+                            git_url,
                             personal_interests,
-                            coding_since, 
+                            coding_since,
                             open_to_work,
-                            fullstack, 
-                            frontend, 
-                            backend, 
+                            fullstack,
+                            frontend,
+                            backend,
                             javascript,
-                            python, 
-                            java, 
+                            python,
+                            java,
                             html
                             FROM coders
                             INNER JOIN accounts
                             ON coders.coder_id = accounts.id
                             WHERE coder_id = %s
                             """,
-                            [coder_id],
-                        )
-                        record = result.fetchone()
-                        if record is None:
-                            return None
-                        return self.record_to_profile_out(record)
-            except Exception as e:
-                print(e)
-                return {"message": "unable to get profile"}
-
+                        [coder_id],
+                    )
+                    record = result.fetchone()
+                    if record is None:
+                        return None
+                    return self.record_to_profile_out(record)
+        except Exception as e:
+            print(e)
+            return {"message": "unable to get profile"}
 
     def record_to_profile_out(self, record):
         return ProfileOut(
@@ -165,25 +178,24 @@ class ProfileRepository:
             html=record[13],
         )
 
-
     def get_all_profiles(self) -> Union[Error, List[ProfileOut]]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
                     query = """
-                        SELECT coder_id, 
-                            avatar_url, 
-                            bio, 
-                            git_url, 
+                        SELECT coder_id,
+                            avatar_url,
+                            bio,
+                            git_url,
                             personal_interests,
-                            coding_since, 
+                            coding_since,
                             open_to_work,
-                            fullstack, 
-                            frontend, 
+                            fullstack,
+                            frontend,
                             backend,
-                            javascript, 
-                            python, 
-                            java, 
+                            javascript,
+                            python,
+                            java,
                             html
                         FROM coders
                         INNER JOIN accounts
@@ -215,8 +227,9 @@ class ProfileRepository:
             print("An error occurred:", e)
             return Error(message="Unable to get profile list")
 
-
-    def update_profile(self, coder_id: int, profile: ProfileIn) -> Union[ProfileOut, Error]:
+    def update_profile(
+        self, coder_id: int, profile: ProfileIn
+    ) -> Union[ProfileOut, Error]:
         try:
             with pool.connection() as conn:
                 with conn.cursor() as db:
@@ -234,7 +247,7 @@ class ProfileRepository:
                             backend = %s,
                             javascript = %s,
                             python = %s,
-                            java = %s, 
+                            java = %s,
                             html = %s
                         WHERE coder_id = %s
                         """,
@@ -259,5 +272,3 @@ class ProfileRepository:
         except Exception as e:
             print(e)
             return {"message": "unable to update profile"}
-        
-        
