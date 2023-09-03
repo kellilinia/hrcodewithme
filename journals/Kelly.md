@@ -1,5 +1,49 @@
 #### STANDUP
 
+### 8/31/23
+## TEAM
+- Yesterday we completed the Signup, Login, Logout for front-end including Auth
+- Today We will work on our individual endpoints, unit tests, and deployment
+- No blockers at this time
+
+## SOLO
+- Work on my front-end endpoints (React and Auth) - will need to complete this for the homepage and possibly an additional endpoint (maybe an edit page for account info)
+
+
+### 8/30/23
+## TEAM
+-
+-
+-
+
+## SOLO
+- Same as above since we worked as a group on the front-end React and auth
+
+
+### 8/29/23
+## TEAM
+- Jaime presented
+    - Yesterday we moved passed our blocker and worked on the final endpoints that were giving us troubles
+    - Today we are finishing up our last endpoint and merge request, and are working on front-end together as a group
+    - No blockers at this time
+
+
+## SOLO
+- Worked on Miguel's endpoints last night
+- Researching front end with Jaime as paired programmers (React/authentication)
+
+
+### 8/28/23
+## TEAM
+- Kelly presented
+    - Friday we worked on remaining endpoints
+    - Today we have one last endpoint to finish up, and need to protect it - plan on moving over to front end later today
+    - We do have a blocker regarding our profile page endpoint - cannot create an account - will need assistance from a SEIR or an instructor on this
+
+
+## SOLO
+- Same as above since we worked as a group on Miguel's endpoint
+
 ### 8/25/23
 ## TEAM
 - Miguel presented
@@ -89,14 +133,6 @@
 
 
 #### DAILY JOURNAL
-
-
-### 8/25/23
-- Supported team members with their endpoints
--
-
-### 8/24/23
-- Supported team members with their endpoints
 
 ### 8/23/23
 - Kelly presented:

@@ -3,6 +3,7 @@ import { AuthProvider } from "@galvanize-inc/jwtdown-for-react";
 import EmployerSearch from "./EmployerSearch";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
+import UpdateAccount from "./UpdateAccount";
 import Nav from "./Nav";
 import "./App.css";
 
@@ -17,7 +18,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/token" element={<LoginForm />} />
-            <Route path="signout" element={<EmployerSearch />} />
+            <Route path="/update" element={<UpdateAccount />} />
             <Route path="/signup" element={<SignupForm />} />
             <Route path="homepage" element={<EmployerSearch />} />
             <Route path="game" element={<EmployerSearch />} />

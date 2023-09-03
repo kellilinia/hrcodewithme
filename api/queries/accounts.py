@@ -213,10 +213,6 @@ class AccountRepository:
                         ],
                     )
                     id = result.fetchone()[0]
-                    # old_data = account.dict()
-                    # return {"message": "error!"}
-                    # return AccountOut(id=id, **old_data)
-                    # Return new data
                     return self.account_in_to_out(id, account)
         except Exception:
             return {"message": "unable to create"}
