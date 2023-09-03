@@ -58,7 +58,7 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/signin" onClick={logout}>
+              <NavLink className="nav-link" to="/token" onClick={logout}>
                 Logout
               </NavLink>
             </li>

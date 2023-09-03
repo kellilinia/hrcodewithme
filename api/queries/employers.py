@@ -90,7 +90,6 @@ class SearchRepository:
                         coding_since,
                     ) = row
                     if coding_since <= coder.coding_since:
-                        # will need to make coding_since required
                         search_results.append(
                             SearchOut(
                                 coder_id=coder_id,

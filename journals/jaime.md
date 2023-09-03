@@ -1,3 +1,49 @@
+## Aug 29, 2023
+
+Today, I worked on:
+
+- Pair-programming with Kelly, started code for frontend
+- Updated App.js and created Nav.js
+- Started EmployerSearch.js
+
+Today Kelly & I started the code for the frontend by creating the Nav.js
+and updating the App.js forms in ghi folder. We put template bootstrap
+code in as a placeholder so we can each work on our individual frontend
+endpoints.
+
+We came across an problem with getting bootstrap html code to show up properly, and compared it to a previous project. We added 2 bootstrap lines to index.html and it fixed the issue.
+
+As a group, we decided where to place each of our links in Nav and App to minimize future merge conflicts on shared pages. Created merge request, and started React frontend for employer search!
+
+## Aug 28, 2023
+
+Today, I worked on:
+
+- As a group, worked on adding UUID in accounts to reference coder
+
+We had a blocker with one of our endpoints, trying to reference the account
+id from the coder id table. Paul had suggested we use UUID and add a
+user_id field in our accounts table. We attempted to work on this as a
+group, but came across a lot of issues and decided to update the endpoint
+code instead.
+
+Creating a UUID required importing it, editing yaml, adding a sql file,
+adding to our table, and updating all of the account queries. We
+collectively decided to revert back to our original table, and use the
+generated id as the coder_id.
+
+## Aug 25, 2023
+
+Today, I worked on:
+
+- Protected endpoint for employers only
+
+I added a function in employers_routers.py to identify if coder=false
+then the user is an employer. Added that function to protect the
+endpoint if a user is logged in, and if user is an employer then they
+have access to the employer_search. Tested functionality and completed
+merge request!
+
 ## Aug 24, 2023
 
 Today, I worked on:
@@ -24,7 +70,7 @@ Waiting to protect endpoint before submitting merge request for
 Will need to look into how to protect the endpoint for specific
 employer user (coder = False) from accounts detail.
 
-Creating accounts in beekeeper does not create hashed password,
+BTW - Creating accounts in beekeeper does not create hashed password,
 and won't work properly in FastAPI for logging in.
 
 ## Aug 23, 2023
