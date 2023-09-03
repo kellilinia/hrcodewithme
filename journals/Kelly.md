@@ -1,4 +1,61 @@
 #### STANDUP
+
+### 8/31/23
+## TEAM
+- Yesterday we completed the Signup, Login, Logout for front-end including Auth
+- Today We will work on our individual endpoints, unit tests, and deployment
+- No blockers at this time
+
+## SOLO
+- Work on my front-end endpoints (React and Auth) - will need to complete this for the homepage and possibly an additional endpoint (maybe an edit page for account info)
+
+
+### 8/30/23
+## TEAM
+-
+-
+-
+
+## SOLO
+- Same as above since we worked as a group on the front-end React and auth
+
+
+### 8/29/23
+## TEAM
+- Jaime presented
+    - Yesterday we moved passed our blocker and worked on the final endpoints that were giving us troubles
+    - Today we are finishing up our last endpoint and merge request, and are working on front-end together as a group
+    - No blockers at this time
+
+
+## SOLO
+- Worked on Miguel's endpoints last night
+- Researching front end with Jaime as paired programmers (React/authentication)
+
+
+### 8/28/23
+## TEAM
+- Kelly presented
+    - Friday we worked on remaining endpoints
+    - Today we have one last endpoint to finish up, and need to protect it - plan on moving over to front end later today
+    - We do have a blocker regarding our profile page endpoint - cannot create an account - will need assistance from a SEIR or an instructor on this
+
+
+## SOLO
+- Same as above since we worked as a group on Miguel's endpoint
+
+### 8/25/23
+## TEAM
+- Miguel presented
+    - Yesterday we went through the remainder of authentication, and protected our first few endpoints
+    - Today we will complete the remainder of our endpoints and protect them
+    - No blockers
+
+
+## SOLO
+- Will support team members with finishing up their endpoints and protecting them
+
+
 ### 8/24/23
 ## TEAM
 - Silvano presented:
@@ -76,6 +133,43 @@
 
 
 #### DAILY JOURNAL
+### 9/2/23
+- Went through Jaime's merge request for the coder toggle on SignUp, and verified that the toggle would work of coder = true and if coder = false. I approved the merge request and Jaime merged it to main. I then pulled down Jaime's changes.
+- Went
+### 9/1/23
+
+### 8/31/23
+- Miguel to send a merge request for the Signup, Signin, and Logout front-end React/Auth
+- Work on individual endpoints
+- Create unit tests
+- Work on deployment
+
+### 8/30/23
+- Kelly started the front-end React/Authentication code by creating the SignupForm and putting in, and then we transitioned over the starting point to Miguel
+- Miguel shared his screen and the group created the files and code together for React/Authentication on the SignupForm, LoginForm, and Logout, and modified the code App.js, and Nav.js as necessary
+    - We ran into some misc. issues and were able to catch these by debugging and found out that each team member named the token function the same in the routers files
+- Priorities for tomorrow are to work on front-end endpoints individually, unit tests, and deployment
+
+### 8/29/23
+- Miguel finishing up his endpoints and protecting them, and sent a merge request - approved by Silvano
+- Silvano added try and accept error handling for his endpoints and sent his merge request - Jaime reviewed and approved
+- Jaime and I to worked on front-end together for React and authentication, and got a simple skeleton together including the nav bar. Jaime sent out the merge request and I accepted it
+- Silvano started going through the gitLab pipeline verification
+
+### 8/28/23
+- Worked on Miguel's endpoint errors
+- Spoke to Paul, and he suggested we should create a unique identifier in the accounts table to Miguel to pull form
+- Went through Silvano's endpoints (create game, game details, and list of games) and approved it
+- Silvano merged his endpoint and all team members pulled the changes to local main and verified it's functionality
+- Spent the evening working through Miguel's endpoints, and were finally able to fix the outstanding errors with Miguel's endpoint
+
+
+### 8/25/23
+- Supported team members with their endpoints
+- Went through and approved Jaime's merge request for employer search
+
+### 8/24/23
+- Supported team members with their endpoints
 
 ### 8/23/23
 - Kelly presented:

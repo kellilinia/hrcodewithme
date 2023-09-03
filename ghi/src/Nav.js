@@ -33,8 +33,8 @@ function Nav() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" to="/signout">
-                Sign out
+              <NavLink className="nav-link" to="/update">
+                Update Account
               </NavLink>
             </li>
             <li className="nav-item">
