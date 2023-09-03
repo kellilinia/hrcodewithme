@@ -13,10 +13,24 @@ class AccountToken(Token):
 router = APIRouter()
 
 
+def is_employer(
+    account_data: dict = Depends(authenticator.get_current_account_data),
+):
+    coder = account_data.get("coder")
+    if coder is False:
+        return account_data
+    else:
+        raise HTTPException(
+            status_code=403,
+            detail="You do not have an employer account to access this page.",
+        )
+
+
 @router.get("/token", response_model=AccountToken | None)
 async def get_token_emp(
     request: Request,
     account: AccountOut = Depends(authenticator.try_get_current_account_data),
+    authenticated_employer: dict = Depends(is_employer)
 ) -> AccountToken | None:
     if account and authenticator.cookie_name in request.cookies:
         return {
@@ -26,26 +40,13 @@ async def get_token_emp(
         }
 
 
-def is_employer(
-    account_data: dict = Depends(authenticator.get_current_account_data),
-):
-    coder = account_data.get("coder")
-    if coder is False:
-        return True
-    else:
-        raise HTTPException(
-            status_code=405,
-            detail="You do not have an employer account to access this page.",
-        )
-
-
-@router.get("/employer/search", response_model=List[SearchOut])
+@router.post("/employer/search", response_model=List[SearchOut])
 def employer_search(
-    search_criteria: SearchIn = Depends(),
+    search_criteria: SearchIn,
+    repo: SearchRepository = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
-    employer: dict = Depends(is_employer),
+    authenticated_employer: dict = Depends(is_employer),
 ):
-    repo = SearchRepository()
     try:
         search_results = repo.employer_search(search_criteria)
         return search_results
