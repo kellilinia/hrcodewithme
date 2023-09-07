@@ -1,24 +1,43 @@
 #### STANDUP
 
+### 9/06/23
+## TEAM
+- Silvano presented
+    - Yesterday we worked on unit tests and front-end views
+    - Today our priority will be to wrap up our unit tests
+    - No blockers at this time
+## SOLO
+- Work on my unit test
+
+### 9/05/23
+## TEAM
+- Kelly presented
+    - Last Thursday/Friday we worked on our front end views, deployment, and unit tests
+    - Today We will continue working on front end views and unit tests
+    - No blockers at this time
+
+## SOLO
+- Work on my unit test
+
 ### 8/31/23
 ## TEAM
-- Yesterday we completed the Signup, Login, Logout for front-end including Auth
-- Today We will work on our individual endpoints, unit tests, and deployment
-- No blockers at this time
+- Miguel presented
+    - Yesterday we completed the Signup, Login, Logout for front-end including Auth
+    - Today We will work on our individual endpoints, unit tests, and deployment
+    - No blockers at this time
 
 ## SOLO
 - Work on my front-end endpoints (React and Auth) - will need to complete this for the homepage and possibly an additional endpoint (maybe an edit page for account info)
 
-
 ### 8/30/23
 ## TEAM
--
--
--
+- Silvano presented
+- Yesterday: Completed frontend authentication, and worked on getting deployment set up
+- Today: Continue work on our individual frontend endpoints, unit tests, setting up deployment
+- No blockers
 
 ## SOLO
 - Same as above since we worked as a group on the front-end React and auth
-
 
 ### 8/29/23
 ## TEAM
@@ -27,11 +46,9 @@
     - Today we are finishing up our last endpoint and merge request, and are working on front-end together as a group
     - No blockers at this time
 
-
 ## SOLO
 - Worked on Miguel's endpoints last night
 - Researching front end with Jaime as paired programmers (React/authentication)
-
 
 ### 8/28/23
 ## TEAM
@@ -39,7 +56,6 @@
     - Friday we worked on remaining endpoints
     - Today we have one last endpoint to finish up, and need to protect it - plan on moving over to front end later today
     - We do have a blocker regarding our profile page endpoint - cannot create an account - will need assistance from a SEIR or an instructor on this
-
 
 ## SOLO
 - Same as above since we worked as a group on Miguel's endpoint
@@ -50,12 +66,8 @@
     - Yesterday we went through the remainder of authentication, and protected our first few endpoints
     - Today we will complete the remainder of our endpoints and protect them
     - No blockers
-
-
 ## SOLO
 - Will support team members with finishing up their endpoints and protecting them
-
-
 ### 8/24/23
 ## TEAM
 - Silvano presented:
@@ -65,7 +77,6 @@
 
 ## SOLO
 - Same as above since we worked together as a group on Authentication
-
 
 ### 8/23/23
 ## TEAM
@@ -104,9 +115,9 @@
     - Yesterday we completed the tables and error handled some minor typos
     - Today we will be getting our first endpoint done for "Signup"
     - No barriers at this time
+
 ## SOLO
 - Same as above since we worked have been working as a group to set up our environment
-
 
 ### 8/16/23
 ## TEAM
@@ -114,9 +125,9 @@
     - Yesterday we completed the initial setup for the yml file and creating the volume, image, and containers, and went through a merge request, bringing down the changes.
     - Today we will focus on setting up our tables and if time, will work on our first endpoint
     - No blockers at the moment.
+
 ## SOLO
 - Same as above since we worked have been working as a group to set up our environment
-
 
 ### 8/15/23
 ## TEAM
@@ -124,19 +135,34 @@
     - We set up the project environment as a team and added the necessary code in the yaml file, and we completed a merge request successfully
     - Tomorrow we will focus on error handling and finishing the initial setup of the project
     - We have a roadblock related to an error message for psychopg and the FastAPI container closing. We believe we may have found a way to resolve this issue.
+
 ## SOLO
 - Same as above since we worked have been working as a group to set up our environment
 
 
 
 
-
-
 #### DAILY JOURNAL
+
+### 9/6/23
+- Completed my unit test for update data (PUT)
+    - Created a file named test_update_account.py inside of the tests folder
+    - Developed code inside of the test_update_account.py file to create mock account update data, and developed a unit test using pytest to verify that this is working for my endpoint
+    - Ran my pytest inside of the fastAPI container terminal by typing "python -m pytest" and verifying that I received a green "passed" indication
+    - Modified code inside of my test file to verify that a conflict in the request and response would flag a failed test, or a different account_id or coder = False would flag a failed test
+- Created a merge request for my unit test and assigned Jaime to approve
+- Make profile view if I have time
+
+### 9/5/23
+- work on unit test
+
 ### 9/2/23
 - Went through Jaime's merge request for the coder toggle on SignUp, and verified that the toggle would work of coder = true and if coder = false. I approved the merge request and Jaime merged it to main. I then pulled down Jaime's changes.
-- Went
+- Went through my UpdateAccount.js file with Jaime and we finished the view. I created a merge request, Jaime approved, and I merged to main and pulled down the changes. There is an issue with the hashed password that will require me to go back in and add the necessary code.
+- Jaime sent a merge request for the front-end employer search view, and I went through the merge request and approved and then pulled down the changes locally.
+
 ### 9/1/23
+- Worked on my UpdateAccount.js file
 
 ### 8/31/23
 - Miguel to send a merge request for the Signup, Signin, and Logout front-end React/Auth
@@ -163,7 +189,6 @@
 - Silvano merged his endpoint and all team members pulled the changes to local main and verified it's functionality
 - Spent the evening working through Miguel's endpoints, and were finally able to fix the outstanding errors with Miguel's endpoint
 
-
 ### 8/25/23
 - Supported team members with their endpoints
 - Went through and approved Jaime's merge request for employer search
@@ -188,12 +213,9 @@
         - Merge request was verified by Silvano and approved
         - I merged the updated information from my branch Signin to the main, and all members pulled the updated main to their local and verified that the updates were working
 
-
 ### 8/22/23
-
 Focus for tomorrow:
 - Mob code with group on authentication
-
 
 ### 8/21/23
 - Group discussed our priorities for the day and the week
@@ -209,7 +231,6 @@ Focus for tomorrow:
 - Added account_in_to_out function to queries/accounts.py file
 - Added record_to_account_out function to queries/accounts.py file
 - Added some minor error handling, but will go over this with the team to optimize accordingly
-
 Focus for tomorrow:
 - Submit merge request for Account endpoints list of accounts, account details, updating account, and deleting account
 - Read through documentation and catch up on any other material
@@ -225,7 +246,6 @@ Focus for tomorrow:
 - Kelly merged to main and team pulled updated file
 - Team updated leadership over the completion of tasks for this week
 
-
 ### 8/16/23
 - Created postgreSQL tables as a a group (Jaime created a document for the tables and we went through and verified the data - we used this document to create the table, and verify in Beekeeper)
     - accounts
@@ -237,12 +257,10 @@ Focus for tomorrow:
 - Successfully went through a merge request approval as a team (Silvano approved it)
 - Successfully brought changes to main to all team member's local
 - Successfully ran containers and checked database for tables
-
 Focus for tomorrow:
 - Update changes to endpoints requested by leads
 - Go through necessary documentation over FastAPI endpoints
 - Create Signup endpoint together as a group and successfully make a merge request and approval for all team members to pull from
-
 
 ### 8/15/23
 - We set up our environment as a team, cloning the project and creating a local repo
@@ -251,14 +269,12 @@ Focus for tomorrow:
     - Ran into issues with pysychopg error and the FastAPI container kept closing - We fixed the url path specified in the yml file and in the account.py file and this resolved the error.
     - Once error was fixed each team member brought down the change
 
-
 ### 8/14/23
 - Finished up any last minute designing pieces
 - Discussed our project idea, wireframe, design, including endpoints with leads to get their sign off on the setup
 - Made requested adjustments to the project design
 - Kelly developed a git cheatsheet for the team
 - The team practiced git commands for branches, merge requests, merge approvals, etc.
-
 
 ### 8/7/23 - 8/11/23
 - During the first week we:
