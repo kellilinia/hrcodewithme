@@ -13,7 +13,10 @@ app.include_router(profile_routers.router)
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[os.environ.get("CORS_HOST", "http://localhost:3000")],
+    allow_origins=[
+        os.environ.get("CORS_HOST", "http://localhost:3000"),
+        "https://mintyzebras.gitlab.io/code-with-me/",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
