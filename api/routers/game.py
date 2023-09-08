@@ -35,12 +35,12 @@ def create_game(
     return repo.create(Game)
 
 
-@router.get("/games/", response_model=List[GameOut])
+@router.get("/games", response_model=List[GameOut])
 async def get_all_games(
     account_data: dict = Depends(authenticator.get_current_account_data),
 ):
     game_queries = GameQueries()
-    return game_queries.get_all()
+    return game_queries.get_all_games()
 
 
 @router.get("/games/{game_id}", response_model=GameOut)

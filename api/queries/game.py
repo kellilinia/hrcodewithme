@@ -52,7 +52,7 @@ class GameQueries:
             print(e)
             return {"message": "unable to create game"}
 
-    def get_all(self) -> List[GameOut]:
+    def get_all_games(self) -> List[GameOut]:
         games = []
         try:
             with pool.connection() as conn:
