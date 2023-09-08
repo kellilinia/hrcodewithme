@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useToken from "@galvanize-inc/jwtdown-for-react";
-// import "./custom.css";
+import "./index.css";
 
 function BootstrapInput(props) {
   const { value, onChange, id, htmlFor, labelText } = props;
@@ -11,11 +11,11 @@ function BootstrapInput(props) {
         value={value}
         onChange={onChange}
         type="checkbox"
-        className="btn-check"
+        className="btn-check color-blue"
         id={id}
         autoComplete="off"
       />
-      <label className="btn btn-outline-primary" htmlFor={htmlFor}>
+      <label className="btn btn-outline-primary color-blue" htmlFor={htmlFor}>
         {labelText}
       </label>
     </>
@@ -98,12 +98,12 @@ function EmployerSearch() {
 
   return (
     <>
-      <p></p>
       <h1>Employer Search</h1>
+      <p></p>
       <p></p>
       <form onSubmit={handleSubmit} id="search-form">
         <div
-          className="btn-group"
+          className="btn-groups"
           role="group"
           aria-label="Basic checkbox toggle button group"
         >
@@ -169,7 +169,7 @@ function EmployerSearch() {
         {/* BUTTON */}
         <p></p>
         <div>
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-warning">
             Search
           </button>
           <p></p>
@@ -179,22 +179,22 @@ function EmployerSearch() {
       {showTableHeader ? (
         profiles && profiles.length > 0 ? (
           <div>
-            <table className="table table-striped table-color">
+            <table className="table table-striped">
               <thead>
-                <tr>
+                <tr className="color-yellow">
                   <th>Coder Name</th>
                   <th>Tech Stack</th>
                   <th>Languages</th>
                   <th>Profile link</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="color-yellow">
                 {profiles?.map((profile) => (
-                  <tr key={profile.coder_id}>
-                    <td>
+                  <tr className="color-yellow" key={profile.coder_id}>
+                    <td className="color-orange">
                       {profile.first_name} {profile.last_name}
                     </td>
-                    <td>
+                    <td className="color-orange">
                       {profile.fullstack && "Fullstack"}
                       {profile.frontend && <br />}
                       {profile.frontend && "Frontend"}
