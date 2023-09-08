@@ -5,6 +5,7 @@ import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import UpdateAccount from "./UpdateAccount";
 import Game from "./Game";
+import ProfileForm from "./ProfileForm";
 import Nav from "./Nav";
 import "./App.css";
 
@@ -23,7 +24,7 @@ function App() {
             <Route path="/signup" element={<SignupForm />} />
             <Route path="homepage" element={<EmployerSearch />} />
             <Route path="game" element={<Game />} />
-            <Route path="profile" element={<EmployerSearch />} />
+            <Route path="/profile" element={<ProfileForm />} />
             <Route path="employer/search" element={<EmployerSearch />} />
             <Route path="/" element={<LoginForm />} />
           </Routes>
