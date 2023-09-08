@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
 }
 
 code {
@@ -12,17 +13,83 @@ code {
     monospace;
 }
 
-/* body {
-  margin: 0;
-  font-family: 'Merriweather', serif;
-  font-family: 'Roboto Mono', monospace;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.nav-logo-img {
+  max-width: 100px;
 }
 
-code {
-  font-family: 'Merriweather', serif;
-  font-family: 'Roboto Mono', monospace;
+.nav-wordlogo-img {
+  max-width: 160px;
+}
 
-} */
+.nav-bg {
+  background: black;
+  text-align: center;
+}
+
+.bg {
+  background: black;
+  border: 1px solid #3ffe49;
+  color: #f2fe3f;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  color: white;
+  text-align: center;
+}
+
+.card-color {
+  background: black;
+}
+
+.cardbody {
+  text-align: center;
+  background: black;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-color {
+  background-color: #f2fe3f;
+}
+
+.centerthings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding-top: 50px;
+}
+
+.container-fluid {
+  padding-top: 10px;
+}
+
+.links {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.color-yellow {
+  color: rgb(227, 238, 154);
+}
+
+.color-green {
+  color: rgb(165, 251, 134);
+}
+
+.color-orange {
+  color: rgb(247, 189, 147);
+}
+
+.color-blue {
+  color: rgb(147, 222, 247);
+  border: 1px solid rgb(147, 222, 247);
+}
