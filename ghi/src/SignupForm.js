@@ -102,7 +102,7 @@ const SignupForm = () => {
               <input
                 name="email"
                 type="text"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => {
                   setEmail(e.target.value);
                 }}
@@ -113,7 +113,7 @@ const SignupForm = () => {
               <input
                 name="username"
                 type="text"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => {
                   setUsername(e.target.value);
                 }}
@@ -124,7 +124,7 @@ const SignupForm = () => {
               <input
                 name="password"
                 type="password"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => {
                   setPassword(e.target.value);
                 }}
@@ -135,7 +135,7 @@ const SignupForm = () => {
               <input
                 name="first"
                 type="text"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => {
                   setFirstName(e.target.value);
                 }}
@@ -146,7 +146,7 @@ const SignupForm = () => {
               <input
                 name="last"
                 type="text"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => {
                   setLastName(e.target.value);
                 }}

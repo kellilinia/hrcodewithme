@@ -58,7 +58,9 @@ const UpdateAccount = () => {
   return (
     <div className="centerthings">
       <div className="card text-bg-dark mb-3 cardbody">
-        <h2 className="card-header">Update Account Information</h2>
+        <h2 className="card-header title-spacing">
+          Update Account Information
+        </h2>
         <div className="card-body card-color">
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="mb-3">
@@ -115,9 +117,9 @@ const UpdateAccount = () => {
                 onChange={(e) => setLastName(e.target.value)}
               />
             </div>
-            <div>
+            <div className="button-spacing">
               <input
-                className="btn btn-color"
+                className="btn btn-warning"
                 type="submit"
                 value="Update Account"
               />

@@ -7,10 +7,11 @@ import UpdateAccount from "./UpdateAccount";
 import Game from "./Game";
 import Nav from "./Nav";
 import "./App.css";
+import Homepage from "./Homepage";
 
 function App() {
   const domain = /https:\/\/[^/]+/;
-  const basename = process.env.PUBLIC_URL.replace(domain, '');
+  const basename = process.env.PUBLIC_URL.replace(domain, "");
 
   return (
     <BrowserRouter basename={basename}>
@@ -25,7 +26,7 @@ function App() {
             <Route path="game" element={<Game />} />
             <Route path="profile" element={<EmployerSearch />} />
             <Route path="employer/search" element={<EmployerSearch />} />
-            <Route path="/" element={<LoginForm />} />
+            <Route path="/" element={<Homepage />} />
           </Routes>
         </div>
       </AuthProvider>
