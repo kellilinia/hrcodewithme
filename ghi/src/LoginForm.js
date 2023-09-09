@@ -22,28 +22,28 @@ const LoginForm = () => {
   return (
     <div className="centerthings">
       <div className="card text-bg-light mb-3 cardbody">
-        <h2 className="card-header">Login</h2>
+        <h2 className="card-header title-spacing">Login</h2>
         <div className="card-body">
           <form onSubmit={(e) => handleSubmit(e)}>
             <div className="mb-3">
-              <label className="form-label">Username:</label>
+              <label className="form-label text-info">Username:</label>
               <input
                 name="username"
                 type="text"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Password:</label>
+              <label className="form-label text-danger">Password:</label>
               <input
                 name="password"
                 type="password"
-                className="form-control"
+                className="form-control bg"
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <div>
+            <div className="button-spacing">
               <input className="btn btn-warning" type="submit" value="Login" />
             </div>
             <p></p>

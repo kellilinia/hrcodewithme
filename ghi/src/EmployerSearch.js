@@ -98,12 +98,12 @@ function EmployerSearch() {
 
   return (
     <>
-      <h1>Employer Search</h1>
-      <p></p>
-      <p></p>
+      <div className="title-spacing">
+        <h1>Employer Search</h1>
+      </div>
       <form onSubmit={handleSubmit} id="search-form">
         <div
-          className="btn-groups"
+          className="btn-groups "
           role="group"
           aria-label="Basic checkbox toggle button group"
         >
@@ -168,7 +168,7 @@ function EmployerSearch() {
         </div>
         {/* BUTTON */}
         <p></p>
-        <div>
+        <div className="button-spacing">
           <button type="submit" className="btn btn-warning">
             Search
           </button>
@@ -179,7 +179,7 @@ function EmployerSearch() {
       {showTableHeader ? (
         profiles && profiles.length > 0 ? (
           <div>
-            <table className="table table-striped">
+            <table className="table table-spacing">
               <thead>
                 <tr className="color-yellow">
                   <th>Coder Name</th>
@@ -201,7 +201,7 @@ function EmployerSearch() {
                       {profile.backend && <br />}
                       {profile.backend && "Backend"}
                     </td>
-                    <td>
+                    <td className="color-orange">
                       {profile.javascript && "Javascript"}
                       {profile.javascript && <br />}
                       {profile.python && "Python"}
@@ -211,7 +211,10 @@ function EmployerSearch() {
                       {profile.html && "HTML"}
                     </td>
                     <td>
-                      <a href={`localhost:3000/profile/${profile.coder_id}`}>
+                      <a
+                        className="text-info"
+                        href={`localhost:3000/profile/${profile.coder_id}`}
+                      >
                         {profile.first_name}'s Profile
                       </a>
                     </td>

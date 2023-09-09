@@ -4,47 +4,7 @@ import "./index.css";
 
 function Nav() {
   const { token, logout } = useToken();
-  // const [account, setAccount] = useState([]);
   const isAuthenticated = !!token;
-
-  // const fetchAccount = async () => {
-  //   const accountUrl = `${process.env.REACT_APP_API_HOST}/accounts`;
-  //   const fetchConfig = {
-  //     method: "GET",
-  //     credentials: "include",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //   };
-  //   fetchWithCookie(accountUrl, "get", fetchConfig);
-
-  //   try {
-  //     const response = await fetch(accountUrl, fetchConfig);
-  //     console.log(response.status);
-
-  //     if (!response.ok) {
-  //       throw new Error(`Fetch failed with status: ${response.status}`);
-  //     }
-
-  //     const accountData = await response.json();
-  //     setAccount(accountData.account);
-  //     console.log(account);
-  //   } catch (error) {
-  //     console.error("Error fetching account:", error);
-  //     // You can handle the error here, e.g., set an error state or display a message to the user.
-  //   }
-  // };
-  //   const response = fetch(accountUrl, fetchConfig);
-  //   console.log(response.status);
-  //   if (response.ok) {
-  //     const accountData = response.json();
-  //     setAccount(accountData.account);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchAccount();
-  // }, []);
 
   return (
     <>
@@ -69,31 +29,27 @@ function Nav() {
             <ul className="navbar-nav">
               {isAuthenticated ? (
                 <>
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link text-info" to="/">
                       Home
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link text-warning" to="/update">
                       Update Account
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link text-success" to="/game">
                       Code with me
                     </NavLink>
                   </li>
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link text-primary" to="/profile">
                       Profile
                     </NavLink>
                   </li>
-                  {/* {account &&
-                    account.map((accounts) => {
-                      if (accounts.coder === false) {
-                        return ( */}
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink
                       className="nav-link text-danger"
                       to="/employer/search"
@@ -101,10 +57,7 @@ function Nav() {
                       Employer Search
                     </NavLink>
                   </li>
-                  {/* );
-                      }
-                    })} */}
-                  <li className="nav-item">
+                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link" to="/token" onClick={logout}>
                       Logout
                     </NavLink>
@@ -112,13 +65,13 @@ function Nav() {
                 </>
               ) : (
                 <>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/token">
+                  <li className="nav-item link-spacing">
+                    <NavLink className="nav-link text-warning" to="/token">
                       Login
                     </NavLink>
                   </li>
-                  <li className="nav-item">
-                    <NavLink className="nav-link" to="/signup">
+                  <li className="nav-item link-spacing">
+                    <NavLink className="nav-link text-info" to="/signup">
                       Sign up
                     </NavLink>
                   </li>
