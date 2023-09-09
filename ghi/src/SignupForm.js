@@ -11,7 +11,7 @@ const SignupForm = () => {
   const [last_name, setLastName] = useState("");
   const [coder, setCoder] = useState(true);
 
-  const [coder_id, setCoderId] = useState();
+  const [coder_id, setCoderId] = useState(7);
   const [avatar_url, setAvatarUrl] = useState("");
   const [bio, setBio] = useState("");
   const [git_url, setGitUrl] = useState("");
@@ -42,6 +42,7 @@ const SignupForm = () => {
     register(accountData, `${process.env.REACT_APP_API_HOST}/accounts`);
 
     // make api token to get call token, account.id from return
+    
 
     const profileData = {
       coder_id, // HOW DO WE CALL THE ACCOUNT_ID INTO CODER_ID
@@ -71,7 +72,7 @@ const SignupForm = () => {
 
     const response = fetch(profileUrl, fetchConfig);
     if (response.ok) {
-      setCoderId(); // this needs to be set
+      setCoderId(7); // this needs to be set
       setAvatarUrl("");
       setBio("");
       setGitUrl("");

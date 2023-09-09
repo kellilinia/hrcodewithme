@@ -102,21 +102,20 @@ const ProfileForm = () => {
     <>
         <div className="my-3 d-flex">
             <div className="container">
+            <h2 className="card-header">Bio</h2>    
                 <div className="row">
                 <div className="shadow p-4 mt-4" style={{ width: '350px', height: '600px' }}>
                     <form onSubmit={(event) => handleSubmit(event)} id="bio">
                     <div className="form-floating mb-3">
                         <textarea style={{ height: '550px'}}
                         value={bio}
-                        onChange={(event) => setBio(event.target.value)}
-                        required
+                        onChange={(event) => { 
+                            setBio(event.target.value);
+                        }}
                         type="textarea"
                         className="form-control"
-                        id="bio"
                         name="bio"
-                        placeholder="Bio"
                         />
-                        <label htmlFor="bio">Bio</label>
                     </div> 
                     </form>
                 </div>
@@ -130,13 +129,12 @@ const ProfileForm = () => {
                                 <div className="form-floating mb-3">
                                     <input 
                                     value={avatar_url}
-                                    onChange={(event) => setAvatarUrl(event.target.value)}
-                                    required
+                                    onChange={(event) => { 
+                                        setAvatarUrl(event.target.value);
+                                    }}
                                     type="text"
                                     className="form-control"
-                                    id="avatar_url"
                                     name="avatar_url"
-                                    placeholder="Avatar Url"
                                     />
                                     <label htmlFor="avatar_url">Avatar Url</label>
                                 </div>
@@ -145,7 +143,9 @@ const ProfileForm = () => {
                                 <div className="form-floating mb-3">
                                     <input 
                                     value={git_url}
-                                    onChange={(event) => setGitUrl(event.target.value)}
+                                    onChange={(event) => {
+                                        setGitUrl(event.target.value);
+                                    }}
                                     required
                                     type="text"
                                     className="form-control"
@@ -160,7 +160,9 @@ const ProfileForm = () => {
                                 <div className="form-floating mb-3">
                                     <input 
                                     value={coding_since}
-                                    onChange={(event) => setCodingSince(event.target.value)}
+                                    onChange={(event) => {
+                                        setCodingSince(event.target.value);
+                                    }}
                                     required
                                     type="text"
                                     className="form-control"
@@ -177,7 +179,9 @@ const ProfileForm = () => {
                                         
                                         <select 
                                         value={open_to_work ? "Yes" : "No"}
-                                        onChange={(event) => setOpenToWork(event.target.value)}
+                                        onChange={(event) => {
+                                            setOpenToWork(event.target.value);
+                                        }}
                                         className="form-select"
                                         id="open_to_work"
                                         name="open_to_work"
@@ -208,7 +212,9 @@ const ProfileForm = () => {
                                         id="fullstack"
                                         name="fullstack"
                                         value={fullstack}
-                                        onChange={(event) => setFullstack(event.target.value)}
+                                        onChange={(event) => {
+                                            setFullstack(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="fullstack">
                                     Fullstack
@@ -221,7 +227,9 @@ const ProfileForm = () => {
                                         id="frontend"
                                         name="frontend"
                                         value={frontend}
-                                        onChange={(event) => setFrontend(event.target.value)}
+                                        onChange={(event) => {
+                                            setFrontend(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="frontend">
                                     Frontend
@@ -234,7 +242,9 @@ const ProfileForm = () => {
                                         id="backend"
                                         name="backend"
                                         value={backend}
-                                        onChange={(event) => setBackend(event.target.value)}
+                                        onChange={(event) => {
+                                            setBackend(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="backend">
                                     Backend
@@ -247,7 +257,9 @@ const ProfileForm = () => {
                                         id="javascript"
                                         name="javascript"
                                         value={javascript}
-                                        onChange={(event) => setJavascript(event.target.value)}
+                                        onChange={(event) => {
+                                            setJavascript(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="javascript">
                                     JavaScript
@@ -260,7 +272,9 @@ const ProfileForm = () => {
                                         id="python"
                                         name="python"
                                         value={python}
-                                        onChange={(event) => setPython(event.target.value)}
+                                        onChange={(event) => {
+                                            setPython(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="python">
                                     Python
@@ -273,7 +287,9 @@ const ProfileForm = () => {
                                         id="java"
                                         name="java"
                                         value={java}
-                                        onChange={(event) => setJava(event.target.value)}
+                                        onChange={(event) => {
+                                            setJava(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="java">
                                     Java
@@ -286,7 +302,9 @@ const ProfileForm = () => {
                                         id="html"
                                         name="html"
                                         value={html}
-                                        onChange={(event) => setHtml(event.target.value)}
+                                        onChange={(event) => {
+                                            setHtml(event.target.value);
+                                        }}
                                     />
                                     <label className="form-check-label" htmlFor="html">
                                     Html
@@ -297,14 +315,15 @@ const ProfileForm = () => {
 
                                 </p>
                                 <div className="form-floating mb-3">
+                                    <label className="form-label text-danger">Personal Interests</label>
                                     <textarea style={{ height: '325px' }}
                                     value={personal_interests}
-                                    onChange={(event) => setPersonalInterests(event.target.value)}
+                                    onChange={(event) => {
+                                        setPersonalInterests(event.target.value);
+                                    }}
                                     required
                                     className="form-control"
-                                    id="personal_interests"
                                     name="personal_interests"
-                                    placeholder="Personal Interests"
                                     />
                                     <label htmlFor="personal_interests">Personal Interests</label>
                                 </div> 
