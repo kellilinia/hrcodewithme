@@ -131,23 +131,23 @@ class ProfileRepository:
                 with conn.cursor() as db:
                     result = db.execute(
                         """
-                            SELECT coder_id,
-                            avatar_url,
-                            bio,
-                            git_url,
-                            personal_interests,
-                            coding_since,
-                            open_to_work,
-                            fullstack,
-                            frontend,
-                            backend,
-                            javascript,
-                            python,
-                            java,
-                            html
-                            FROM coders
-                            INNER JOIN accounts
-                            ON coders.coder_id = accounts.id
+                            SELECT c.coder_id,
+                            c.avatar_url,
+                            c.bio,
+                            c.git_url,
+                            c.personal_interests,
+                            c.coding_since,
+                            c.open_to_work,
+                            c.fullstack,
+                            c.frontend,
+                            c.backend,
+                            c.javascript,
+                            c.python,
+                            c.java,
+                            c.html
+                            FROM coders c
+                            INNER JOIN accounts a
+                            ON (c.coder_id = a.id)
                             WHERE coder_id = %s
                             """,
                         [coder_id],
