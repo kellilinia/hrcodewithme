@@ -11,20 +11,20 @@ const SignupForm = () => {
   const [last_name, setLastName] = useState("");
   const [coder, setCoder] = useState(true);
 
-  const [coder_id, setCoderId] = useState();
-  const [avatar_url, setAvatarUrl] = useState("");
-  const [bio, setBio] = useState("");
-  const [git_url, setGitUrl] = useState("");
-  const [personal_interests, setPersonalInterests] = useState("");
-  const [coding_since, setCodingSince] = useState(0);
-  const [open_to_work, setOpenToWork] = useState(false);
-  const [fullstack, setFullstack] = useState(false);
-  const [frontend, setFrontend] = useState(false);
-  const [backend, setBackend] = useState(false);
-  const [javascript, setJavascript] = useState(false);
-  const [python, setPython] = useState(false);
-  const [java, setJava] = useState(false);
-  const [html, setHtml] = useState(false);
+  // const [coder_id, setCoderId] = useState();
+  // const [avatar_url, setAvatarUrl] = useState("");
+  // const [bio, setBio] = useState("");
+  // const [git_url, setGitUrl] = useState("");
+  // const [personal_interests, setPersonalInterests] = useState("");
+  // const [coding_since, setCodingSince] = useState(0);
+  // const [open_to_work, setOpenToWork] = useState(false);
+  // const [fullstack, setFullstack] = useState(false);
+  // const [frontend, setFrontend] = useState(false);
+  // const [backend, setBackend] = useState(false);
+  // const [javascript, setJavascript] = useState(false);
+  // const [python, setPython] = useState(false);
+  // const [java, setJava] = useState(false);
+  // const [html, setHtml] = useState(false);
 
   const { register } = useToken();
   const navigate = useNavigate();
@@ -43,49 +43,49 @@ const SignupForm = () => {
 
     // make api token to get call token, account.id from return
 
-    const profileData = {
-      coder_id, // HOW DO WE CALL THE ACCOUNT_ID INTO CODER_ID
-      avatar_url,
-      bio,
-      git_url,
-      personal_interests,
-      coding_since,
-      open_to_work,
-      fullstack,
-      frontend,
-      backend,
-      javascript,
-      python,
-      java,
-      html,
-    };
+    // const profileData = {
+    //   coder_id, // HOW DO WE CALL THE ACCOUNT_ID INTO CODER_ID
+    //   avatar_url,
+    //   bio,
+    //   git_url,
+    //   personal_interests,
+    //   coding_since,
+    //   open_to_work,
+    //   fullstack,
+    //   frontend,
+    //   backend,
+    //   javascript,
+    //   python,
+    //   java,
+    //   html,
+    // };
 
-    const profileUrl = `${process.env.REACT_APP_API_HOST}/profile`;
-    const fetchConfig = {
-      method: "POST",
-      body: JSON.stringify(profileData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    // const profileUrl = `${process.env.REACT_APP_API_HOST}/profile`;
+    // const fetchConfig = {
+    //   method: "POST",
+    //   body: JSON.stringify(profileData),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
 
-    const response = fetch(profileUrl, fetchConfig);
-    if (response.ok) {
-      setCoderId(); // this needs to be set
-      setAvatarUrl("");
-      setBio("");
-      setGitUrl("");
-      setPersonalInterests("");
-      setCodingSince(0);
-      setOpenToWork(false);
-      setFullstack(false);
-      setFrontend(false);
-      setBackend(false);
-      setJavascript(false);
-      setPython(false);
-      setJava(false);
-      setHtml(false);
-    }
+    // const response = fetch(profileUrl, fetchConfig);
+    // if (response.ok) {
+    //   setCoderId(); // this needs to be set
+    //   setAvatarUrl("");
+    //   setBio("");
+    //   setGitUrl("");
+    //   setPersonalInterests("");
+    //   setCodingSince(0);
+    //   setOpenToWork(false);
+    //   setFullstack(false);
+    //   setFrontend(false);
+    //   setBackend(false);
+    //   setJavascript(false);
+    //   setPython(false);
+    //   setJava(false);
+    //   setHtml(false);
+    // }
 
     e.target.reset();
     navigate("/");
