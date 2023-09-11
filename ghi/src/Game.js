@@ -15,7 +15,7 @@ function Game() {
 
   const fetchGameData = async () => {
     try {
-      let apiUrl = 'http://localhost:8000/games?';
+      let apiUrl = `${process.env.REACT_APP_API_HOST}/games`;
       if (selectedLanguage) {
         apiUrl += `language=${selectedLanguage}`;
       }
@@ -90,7 +90,6 @@ function Game() {
 
   useEffect(() => {
     if (selectedLanguage !== '' && !hasFetchedData) {
-      // Check if selectedLanguage has a value and data hasn't been fetched yet
       fetchGameData();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
