@@ -43,11 +43,6 @@ function Nav() {
                     </NavLink>
                   </li>
                   <li className="nav-item link-spacing">
-                    <NavLink className="nav-link text-warning" to="/update">
-                      Update Account
-                    </NavLink>
-                  </li>
-                  <li className="nav-item link-spacing">
                     <NavLink className="nav-link text-success" to="/game">
                       Code with me
                     </NavLink>
@@ -60,9 +55,13 @@ function Nav() {
                   <li className="nav-item link-spacing">
                     <NavLink
                       className="nav-link text-danger"
-                      to="/employer/search"
-                    >
+                      to="/employer/search">
                       Employer Search
+                    </NavLink>
+                  </li>
+                  <li className="nav-item link-spacing">
+                    <NavLink className="nav-link text-warning" to="/update">
+                      Update Account
                     </NavLink>
                   </li>
                   <li className="nav-item link-spacing">

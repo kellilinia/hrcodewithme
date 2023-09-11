@@ -134,8 +134,81 @@ Team members:
 
 
 
-##### Game
-* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
+## Game
+
+The Game Management APIs in this application offer a collection of endpoints to facilitate the administration and interaction with game-related data. These endpoints enable users to perform Create and Read operations on game records. Below, you'll find details on how to access these endpoints, along with examples of input and output JSON responses.
+
+
+| Action                     | Method | URL                                      |
+| -------------------------- | ------ | -----------------------------------------|
+| Get all Games (protected)  | GET    | http://localhost:8000/games              |
+| Get Game (protected)       | GET    | http://localhost:8000/games/{game_id}    |
+| Create Game (protected)    | POST   | http://localhost:8000/game               |
+
+
+### Get all Games
+
+Response Body:
+
+```
+  [
+    {
+    "id": 0,
+    "language": "string",
+    "question": "string",
+    "answer": "string",
+    "wrong_answer": "string",
+    "difficulty": "string"
+  }
+  ]
+```
+
+### Get Game
+
+Response Body:
+
+```
+  [
+    {
+      "id": 0,
+      "language": "string",
+      "question": "string",
+      "answer": "string",
+      "wrong_answer": "string",
+      "difficulty": "string"
+    }
+  ]
+```
+
+### Create Game
+
+Input Body:
+
+```
+  [
+    {
+      "language": "string",
+      "question": "string",
+      "answer": "string",
+      "wrong_answer": "string",
+      "difficulty": "string"
+    }
+  ]
+```
+
+Response Body:
+
+```
+  [
+    {
+      "language": "string",
+      "question": "string",
+      "answer": "string",
+      "wrong_answer": "string",
+      "difficulty": "string"
+    }
+  ]
+```
 
 
 
