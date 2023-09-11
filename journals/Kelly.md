@@ -1,5 +1,14 @@
 #### STANDUP
 
+### 9/11/23
+## TEAM
+- Kelly presented
+    - Friday and over the weekend we completed deployment, visuals, and all endpoints excluding one, and try to figure out why one end point did not pass deployment
+    - Today we will be the wrapping up the final endpoint, any last minute items, and getting our README documentation complete
+
+## SOLO
+- Same as group
+
 ### 9/06/23
 ## TEAM
 - Silvano presented
@@ -143,6 +152,15 @@
 
 
 #### DAILY JOURNAL
+
+### 9/11/23
+- Jaime and Silvano figured out the error we were receiving with one of the unit tests, are all errors are fixed
+- Each team member went in and created a .env file and added the signing key and url, and make sure docker was back up and running
+- Created README outline for team
+- All team members worked together to complete documentation
+
+### 9/10/23
+- Worked on deployment with Jaime and Silvano, and we were able to error handle and complete it
 
 ### 9/6/23
 - Completed my unit test for update data (PUT)

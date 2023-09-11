@@ -1,141 +1,203 @@
-# Module3 Project Gamma
+## README Documentation
 
-## Getting started
 
-You have a project repository, now what? The next section
-lists all of the deliverables that are due at the end of the
-week. Below is some guidance for getting started on the
-tasks for this week.
+### Code With Me
+A collaborative and fun way to test your coding skills and meet other coders
 
-## Install Extensions
+Team members:
+- Jamie Huey
+- Miguel Ortiz
+- Silvano Gonzalez
+- Kelly Khalilinia
 
-- Prettier: <https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode>
-- Black Formatter: <https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter>
+### Project Initialization / Getting Started
+1. Navigate to gitLab and fork and clone the repository down locally
+2. Navigate to the project directory in the terminal
+3. Run the following commands to create docker volumes / build and run docker:
+    - docker volume create admin-pg
+    - docker volume create postgres-data
+    - docker compose up
+4. Navigate to the following location to play Code With Me! Make sure you create an account in order to participate in a few coding challenges.
+   https://mintyzebras.gitlab.io/code-with-me/
 
-## Deliverables
+### Design
 
-- [ ] Wire-frame diagrams
-- [ ] API documentation
-- [ ] Project is deployed to Caprover (BE, DB) & GitLab-pages (FE)
-- [ ] GitLab issue board is setup and in use (or project management tool of choice)
-- [ ] Journals
 
-## Project layout
+#### Diagram
+* INSERT DIAGRAM*
 
-The layout of the project is just like all of the projects
-you did with `docker-compose` in module #2. You will create
-a directory in the root of the repository for each service
-that you add to your project just like those previous
-projects were setup.
+#### API Design
 
-### Directories
 
-Several directories have been added to your project. The
-directories `docs` and `journals` are places for you and
-your team-mates to, respectively, put any documentation
-about your project that you create and to put your
-project-journal entries. See the _README.md_ file in each
-directory for more info.
 
-The other directories, `ghi` and `api`, are services, that
-you can start building off of.
+##### Accounts
+- Create Account
+    - Method: POST
+    - Path: localhost:8000/accounts
+    - Input:
+    {
 
-Inside of `ghi` is a minimal React app that has an "under
-construction" page. It is setup similarly to all of the
-other React projects that you have worked on.
+    }
 
-Inside of `api` is a minimal FastAPI application.
-"Where are all the files?" you might ask? Well, the
-`main.py` file is the whole thing, and go take look inside
-of it... There's not even much in there..., hmm? That is
-FastAPI, we'll learn more about it in the coming days. Can
-you figure out what this little web-application does even
-though you haven't learned about FastAPI yet?
+    - Output:
+    {
 
-Also in `api` is a directory for your migrations.
-If you choose to use PostgreSQL, then you'll want to use
-migrations to control your database. Unlike Django, where
-migrations were automatically created for you, you'll write
-yours by hand using DDL. Don't worry about not knowing what
-DDL means; we have you covered. There's a sample migration
-in there that creates two tables so you can see what they
-look like.
+    }
 
-The Dockerfile and Dockerfile.dev run your migrations
-for you automatically.
+- Get Account Details
+    - Method: GET
+    - Path: localhost:8000/accounts/{id}
+    - Input:
+    {
 
-### Other files
+    }
 
-The following project files have been created as a minimal
-starting point. Please follow the guidance for each one for
-a most successful project.
+    - Output:
+    {
 
-- `docker-compose.yaml`: there isn't much in here, just a
-  **really** simple UI and FastAPI service. Add services
-  (like a database) to this file as you did with previous
-  projects in module #2.
-- `.gitlab-ci.yml`: This is your "ci/cd" file where you will
-  configure automated unit tests, code quality checks, and
-  the building and deployment of your production system.
-  Currently, all it does is deploy an "under construction"
-  page to your production UI on GitLab and a sample backend
-  to CapRover. We will learn much more about this file.
-- `.gitignore`: This is a file that prevents unwanted files
-  from getting added to your repository, files like
-  `pyc` files, `__pycache__`, etc. We've set it up so that
-  it has a good default configuration for Python projects.
-- `.env.sample`: This file is a template to copy when
-  creating environment variables for your team. Create a
-  copy called `.env` and put your own passwords in here
-  without fear of it being committed to git (see `.env`
-  listed in `.gitignore`). You can also put team related
-  environment variables in here, things like api and signing
-  keys that shouldn't be committed; these should be
-  duplicated in your deployed environments.
+    }
 
-## How to complete the initial deploy
+- Get Account List
+ - Method: GET
+    - Path: localhost:8000/accounts
+    - Input:
+    {
 
-There will be further guidance on completing the initial
-deployment, but it just consists of these steps:
+    }
 
-### Setup GitLab repo/project
+    - Output:
+    {
 
-- make sure this project is in a group. If it isn't, stop
-  now and move it to a GitLab group
-- remove the fork relationship: In GitLab go to:
+    }
 
-  Settings -> General -> Advanced -> Remove fork relationship
+- Edit Account
+ - Method: PUT
+    - Path: localhost:8000/accounts/{id}
+    - Input:
+    {
 
-- add these GitLab CI/CD variables:
-  - PUBLIC_URL : this is your gitlab pages URL
-  - REACT_APP_API_HOST: enter "blank" for now
+    }
 
-#### Your GitLab pages URL
+    - Output:
+    {
 
-You can't find this in GitLab until after you've done a deploy
-but you can figure it out yourself from your GitLab project URL.
+    }
 
-If this is your project URL
+- Delete Account
+ - Method: DELETE
+    - Path: localhost:8000/accounts/{id}
+    - Input:
+    {
 
-https://gitlab.com/GROUP_NAME/PROJECT_NAME
+    }
 
-then your GitLab pages URL will be
+    - Output:
+    {
 
-https://GROUP_NAME.gitlab.io/PROJECT_NAME
+    }
 
-### Initialize CapRover
 
-1. Attain IP address and domain from an instructor
-1. Follow the steps in the CD Cookbook in Learn.
+##### Employer Search
+  * INSERT API REQUEST METHODS
 
-### Update GitLab CI/CD variables
 
-Copy the service URL for your CapRover service and then paste
-that into the value for the REACT_APP_API_HOST CI/CD variable
-in GitLab.
 
-### Deploy it
+##### Coder Profile
+  * INSERT API REQUEST METHODS
 
-Merge a change into main to kick off the initial deploy. Once the build pipeline
-finishes you should be able to see an "under construction" page on your GitLab
-pages site.
+
+
+##### Game
+  * INSERT API REQUEST METHODS
+
+
+
+#### Data Model
+ * INSERT TABLES
+
+
+#### GHI
+
+
+##### Accounts
+* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
+
+
+
+##### Employer Search
+* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
+
+
+
+##### Coder Profile
+* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
+
+
+
+##### Game
+* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
+
+
+
+### Team Roles and Responsibilities
+- Jaime - Hiring Manager view - Frontend/CSS support
+- Miguel  - Profile page view - Frontend/testing features (quality) - additional game support
+- Silvano - Game and game page - Backend/Documentation/Deployment Support
+- Kelly - Account views (signup/signin/update/signout) - Backend/Documentation/Project management related support
+
+Daily journals available for additional information
+
+
+### Niche Market
+Code With Me is a web application geared toward coders who want a unique, fun, and collaborative way to code with others.
+
+With the current deployment of Code With Me, a coder can create an account, sign in and play a multiple choice coder challenge to deepen their knowledge. An additional feature we have built into the app is for an employer to also have the capability to create an account and search for coders as potential hiring candidates. Within the app, a user can create an account, sign in, sign out, and update their account, as well as select whether they are a coder or an employer. Coders can add profile data, and play coding challenges. Employers can select criteria for their search query, and will see a list of coders who are open to work.
+
+The future goal behind Code With Me is to develop the app to allow coders to create an account, sign in, and start a coding challenge. For the coding challenge, or the game, two coders will be paired together, and will play a blind coding challenge with one another. During this collaborative coding challenge, each coder will be able to add a line of code, adding on to the other coder's work, and "push" their changes. Either coder will have the ability to terminate a coding session at any time, whether the coding challenge is complete, or whether they do not want to proceed. At the end of the coding challenge, each player will have the ability to add the coder they worked with as part of their "coding network", and if (and ONLY if) both coders say yes, their gitLab or gitHub username will be shared with each other.
+
+Another feature which could eventually be created as a built-in linkedIn style networking site, which is geared toward software engineers only. When coders finish a challenge they can then just choose if they want to add each other on the network platform (this would be a big stretch goals far in the future).
+
+Code With Me has the potential to add the following benefits to coders as well as employers:
+- A way for coders to network with other individuals in the field
+- Collaboration
+- Another tool for learning code
+- Reading other coder's code
+- Creativity
+- Data to analyze
+- Potential Interview tool
+
+
+### Application Functionality
+- Accounts
+1. A user can create an account by providing:
+    - email address
+    - username
+    - password
+    - first name
+    - last name
+    - selecting whether they are a coder not an employer
+
+2. A user can sign in by providing:
+    - username
+    - password
+
+3. A user can update their account by changing any of the fields below (NOTE: Each field must be filled in):
+    - user id (this is their unique identifier)
+    - email
+    - username
+    - first name
+    - last name
+
+4. A user can navigate to a "Code with me" and "profile" if they are a coder
+5. A user can navigate to "Employer search" if they are an employer
+6. A user can logout
+
+- Employer Search
+1. An employer can use a search query to look for coders open to work by selecting coder tech stack and coding languages
+
+
+- Coder profile
+* INSERT FRAME IMAGES
+
+- Game
+1. A coder can play a multiple choice coding challenge by navigating to "Code with me"
