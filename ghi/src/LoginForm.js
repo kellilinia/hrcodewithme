@@ -48,7 +48,10 @@ const LoginForm = () => {
             </div>
             <p></p>
             <p>
-              Don't have an account? <Link to="/signup">Sign up here!</Link>
+              Don't have an account?{" "}
+              <Link className="text-info" to="/signup">
+                Sign up here!
+              </Link>
             </p>
           </form>
         </div>

@@ -181,27 +181,27 @@ function EmployerSearch() {
           <div>
             <table className="table table-spacing">
               <thead>
-                <tr className="color-yellow">
+                <tr className="color-yellow font-size">
                   <th>Coder Name</th>
                   <th>Tech Stack</th>
                   <th>Languages</th>
                   <th>Profile link</th>
                 </tr>
               </thead>
-              <tbody className="color-yellow">
+              <tbody className="color-white">
                 {profiles?.map((profile) => (
                   <tr className="color-yellow" key={profile.coder_id}>
-                    <td className="color-orange">
+                    <td className="color-red">
                       {profile.first_name} {profile.last_name}
                     </td>
-                    <td className="color-orange">
+                    <td className="color-red">
                       {profile.fullstack && "Fullstack"}
                       {profile.frontend && <br />}
                       {profile.frontend && "Frontend"}
                       {profile.backend && <br />}
                       {profile.backend && "Backend"}
                     </td>
-                    <td className="color-orange">
+                    <td className="color-red">
                       {profile.javascript && "Javascript"}
                       {profile.javascript && <br />}
                       {profile.python && "Python"}

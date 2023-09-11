@@ -22,9 +22,8 @@ function App() {
             <Route path="/token" element={<LoginForm />} />
             <Route path="/update" element={<UpdateAccount />} />
             <Route path="/signup" element={<SignupForm />} />
-            <Route path="homepage" element={<EmployerSearch />} />
             <Route path="game" element={<Game />} />
-            <Route path="profile" element={<EmployerSearch />} />
+            <Route path="profile" element={<Homepage />} />
             <Route path="employer/search" element={<EmployerSearch />} />
             <Route path="/" element={<Homepage />} />
           </Routes>

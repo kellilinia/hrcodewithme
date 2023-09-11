@@ -29,7 +29,7 @@ function Nav() {
             <ul className="navbar-nav">
               {isAuthenticated ? (
                 <>
-                  <li className="nav-item link-spacing">
+                  <li className="nav-item">
                     <NavLink className="nav-link text-info" to="/">
                       Home
                     </NavLink>
