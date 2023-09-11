@@ -17,7 +17,7 @@ function Game() {
     try {
       let apiUrl = `${process.env.REACT_APP_API_HOST}/games`;
       if (selectedLanguage) {
-        apiUrl += `language=${selectedLanguage}`;
+        apiUrl += `?language=${selectedLanguage}`;
       }
 
       setIsLoading(true);
