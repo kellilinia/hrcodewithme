@@ -156,7 +156,7 @@
 ### 9/11/23
 - Jaime and Silvano figured out the error we were receiving with one of the unit tests, are all errors are fixed
 - Each team member went in and created a .env file and added the signing key and url, and make sure docker was back up and running
-- Created README outline for team
+- I created README outline for team, then made a merge request which Jaime approved. I merged to main and everyone pulled to work on their README
 - All team members worked together to complete documentation
 
 ### 9/10/23

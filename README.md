@@ -31,70 +31,126 @@ Team members:
 
 
 ##### Accounts
-- Create Account
+- Create Account (Create Account)
     - Method: POST
     - Path: localhost:8000/accounts
     - Input:
+    ```
     {
-
+        "email": "Curtis",
+        "username": "cschlak",
+        "password": "password",
+        "first_name": "Curtis",
+        "last_name": "Schlak",
+        "coder": true
     }
+    ```
 
-    - Output:
+- Output:
+    ```
     {
-
+        "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OGZjYWIyOC0yZWM0LTRlY2EtYjE2YS0wYzMyN2M3ZTEwMzAiLCJleHAiOjE2OTQ0NzIwNjcsInN1YiI6ImNzY2hsYWsiLCJhY2NvdW50Ijp7ImlkIjoxLCJlbWFpbCI6IkN1cnRpcyIsInVzZXJuYW1lIjoiY3NjaGxhayIsInBhc3N3b3JkIjoiJDJiJDEyJDVDSUQxRm9XTVVnWVE0TWYzUUtjYk92QkxvL05rczNaYmg3NXhkV1BWZ0VyMjRSZUtCQXNDIiwiZmlyc3RfbmFtZSI6IkN1cnRpcyIsImxhc3RfbmFtZSI6IlNjaGxhayIsImNvZGVyIjp0cnVlfX0.HZeXfZy3k8KZIZXt_ltUsUfbQK9Ms9VClzk0I8XMeoM",
+        "token_type": "Bearer",
+        "account": {
+        "id": 1,
+        "email": "Curtis",
+        "username": "cschlak",
+        "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
+        "first_name": "Curtis",
+        "last_name": "Schlak",
+        "coder": true
     }
+    }
+    ```
 
-- Get Account Details
+
+- Get Account Details (Get One Account)
     - Method: GET
-    - Path: localhost:8000/accounts/{id}
+    - Path: localhost:8000/accounts/{account_id}
     - Input:
+    ```
     {
-
+        "account_id": 1
     }
+    ```
 
     - Output:
+
+    ```
     {
-
+        "id": 1,
+        "email": "Curtis",
+        "username": "cschlak",
+        "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
+        "first_name": "Curtis",
+        "last_name": "Schlak",
+        "coder": true
     }
+    ```
 
-- Get Account List
+- Get Account List (Get All)
  - Method: GET
     - Path: localhost:8000/accounts
     - Input:
-    {
-
-    }
+    Select "Execute"
 
     - Output:
-    {
+    ```
+    [
+        {
+            "id": 1,
+            "email": "Curtis",
+            "username": "cschlak",
+            "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
+            "first_name": "Curtis",
+            "last_name": "Schlak",
+            "coder": true
+        }
+    ]
+    ```
 
-    }
-
-- Edit Account
+- Edit Account (Update Account)
  - Method: PUT
-    - Path: localhost:8000/accounts/{id}
+    - Path: localhost:8000/accounts/{account_id}
     - Input:
+    ```
     {
-
+        "email": "Curtis.Schlak@gmail.com",
+        "username": "cschlak",
+        "password": "password",
+        "first_name": "Curtis",
+        "last_name": "Schlak",
+        "coder": true
     }
+    ```
 
     - Output:
+    ```
     {
-
+        "id": 1,
+        "email": "Curtis.Schlak@gmail.com",
+        "username": "cschlak",
+        "password": "password",
+        "first_name": "Curtis",
+        "last_name": "Schlak",
+        "coder": true
     }
+    ```
 
-- Delete Account
+- Delete Account (Delete Account)
  - Method: DELETE
-    - Path: localhost:8000/accounts/{id}
+    - Path: localhost:8000/accounts/{account_id}
     - Input:
+    ```
     {
-
+        "id": 1
     }
+    ```
 
     - Output:
-    {
-
-    }
+    ```
+        true
+    ```
 
 
 ##### Employer Search
@@ -105,32 +161,6 @@ Team members:
 ##### Coder Profile
   * INSERT API REQUEST METHODS
 
-
-
-##### Game
-  * INSERT API REQUEST METHODS
-
-
-
-#### Data Model
- * INSERT TABLES
-
-
-#### GHI
-
-
-##### Accounts
-* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
-
-
-
-##### Employer Search
-* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
-
-
-
-##### Coder Profile
-* INSERT FRAME IMAGES AND FRONTEND VIEW DESCRIPTION
 
 
 
