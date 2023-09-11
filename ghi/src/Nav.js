@@ -11,8 +11,16 @@ function Nav() {
       <nav className="navbar navbar-expand-lg navbar-dark nav-bg">
         <div className="container-fluid d-flex justify-content-between">
           <NavLink className="navbar-brand" to="/">
-            <img src="/imglogo.png" alt="logo" className="nav-logo-img" />
-            <img src="/words.png" alt="logo" className="nav-wordlogo-img" />
+            <img
+              src="https://i.postimg.cc/htnQqvwh/imglogo.png"
+              alt="logo"
+              className="nav-logo-img"
+            />
+            <img
+              src="https://i.postimg.cc/pXJzrKKK/words.png"
+              alt="wordlogo"
+              className="nav-wordlogo-img"
+            />
           </NavLink>
           <button
             className="navbar-toggler"

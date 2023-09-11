@@ -2,7 +2,7 @@ function Homepage() {
   return (
     <>
       <h2>Homepage coming soon...</h2>
-      <img src="/logo.png" alt="logo" />
+      <img src="https://i.postimg.cc/ncFMdgQQ/logo.png" alt="logo" />
     </>
   );
 }
