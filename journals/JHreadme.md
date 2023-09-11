@@ -23,168 +23,85 @@ Team members:
    https://mintyzebras.gitlab.io/code-with-me/
 5. Navigate to localhost:3000 if you've cloned this project.
 
-### Niche Market
-
-Code With Me is a web application geared toward coders who want a unique, fun, and collaborative way to code with others.
-
-With the current deployment of Code With Me, a coder can create an account, sign in and play a multiple choice coder challenge to deepen their knowledge. An additional feature we have built into the app is for an employer to also have the capability to create an account and search for coders as potential hiring candidates. Within the app, a user can create an account, sign in, sign out, and update their account, as well as select whether they are a coder or an employer. Coders can add profile data, and play coding challenges. Employers can select criteria for their search query, and will see a list of coders who are open to work.
-
-The future goal behind Code With Me is to develop the app to allow coders to create an account, sign in, and start a coding challenge. For the coding challenge, or the game, two coders will be paired together, and will play a blind coding challenge with one another. During this collaborative coding challenge, each coder will be able to add a line of code, adding on to the other coder's work, and "push" their changes. Either coder will have the ability to terminate a coding session at any time, whether the coding challenge is complete, or whether they do not want to proceed. At the end of the coding challenge, each player will have the ability to add the coder they worked with as part of their "coding network", and if (and ONLY if) both coders say yes, their gitLab or gitHub username will be shared with each other.
-
-Another feature which could eventually be created as a built-in linkedIn style networking site, which is geared toward software engineers only. When coders finish a challenge they can then just choose if they want to add each other on the network platform (this would be a big stretch goals far in the future).
-
-Code With Me has the potential to add the following benefits to coders as well as employers:
-
-- A way for coders to network with other individuals in the field
-- Collaboration
-- Another tool for learning code
-- Reading other coder's code
-- Creativity
-- Data to analyze
-- Potential Interview tool
-
 ### Design
 
 #### Diagram
 
-![code with me api diagram](diagram.png)
+- INSERT DIAGRAM\*
 
 #### API Design
 
 ##### Accounts
 
-- Create Account (Create Account)
+- Create Account
 
   - Method: POST
   - Path: localhost:8000/accounts
   - Input:
+    {
 
-  ```
-  {
-      "email": "Curtis",
-      "username": "cschlak",
-      "password": "password",
-      "first_name": "Curtis",
-      "last_name": "Schlak",
-      "coder": true
   }
-  ```
-
-- Output:
-
-  ```
-  {
-      "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3OGZjYWIyOC0yZWM0LTRlY2EtYjE2YS0wYzMyN2M3ZTEwMzAiLCJleHAiOjE2OTQ0NzIwNjcsInN1YiI6ImNzY2hsYWsiLCJhY2NvdW50Ijp7ImlkIjoxLCJlbWFpbCI6IkN1cnRpcyIsInVzZXJuYW1lIjoiY3NjaGxhayIsInBhc3N3b3JkIjoiJDJiJDEyJDVDSUQxRm9XTVVnWVE0TWYzUUtjYk92QkxvL05rczNaYmg3NXhkV1BWZ0VyMjRSZUtCQXNDIiwiZmlyc3RfbmFtZSI6IkN1cnRpcyIsImxhc3RfbmFtZSI6IlNjaGxhayIsImNvZGVyIjp0cnVlfX0.HZeXfZy3k8KZIZXt_ltUsUfbQK9Ms9VClzk0I8XMeoM",
-      "token_type": "Bearer",
-      "account": {
-      "id": 1,
-      "email": "Curtis",
-      "username": "cschlak",
-      "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
-      "first_name": "Curtis",
-      "last_name": "Schlak",
-      "coder": true
-  }
-  }
-  ```
-
-- Get Account Details (Get One Account)
-
-  - Method: GET
-  - Path: localhost:8000/accounts/{account_id}
-  - Input:
-
-  ```
-  {
-      "account_id": 1
-  }
-  ```
 
   - Output:
+    {
 
-  ```
-  {
-      "id": 1,
-      "email": "Curtis",
-      "username": "cschlak",
-      "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
-      "first_name": "Curtis",
-      "last_name": "Schlak",
-      "coder": true
   }
-  ```
 
-- Get Account List (Get All)
+- Get Account Details
+
+  - Method: GET
+  - Path: localhost:8000/accounts/{id}
+  - Input:
+    {
+
+  }
+
+  - Output:
+    {
+
+  }
+
+- Get Account List
 - Method: GET
 
   - Path: localhost:8000/accounts
   - Input:
-    Select "Execute"
+    {
+
+  }
 
   - Output:
+    {
 
-  ```
-  [
-      {
-          "id": 1,
-          "email": "Curtis",
-          "username": "cschlak",
-          "password": "$2b$12$5CID1FoWMUgYQ4Mf3QKcbOvBLo/Nks3Zbh75xdWPVgEr24ReKBAsC",
-          "first_name": "Curtis",
-          "last_name": "Schlak",
-          "coder": true
-      }
-  ]
-  ```
+  }
 
-- Edit Account (Update Account)
+- Edit Account
 - Method: PUT
 
-  - Path: localhost:8000/accounts/{account_id}
+  - Path: localhost:8000/accounts/{id}
   - Input:
+    {
 
-  ```
-  {
-      "email": "Curtis.Schlak@gmail.com",
-      "username": "cschlak",
-      "password": "password",
-      "first_name": "Curtis",
-      "last_name": "Schlak",
-      "coder": true
   }
-  ```
 
   - Output:
+    {
 
-  ```
-  {
-      "id": 1,
-      "email": "Curtis.Schlak@gmail.com",
-      "username": "cschlak",
-      "password": "password",
-      "first_name": "Curtis",
-      "last_name": "Schlak",
-      "coder": true
   }
-  ```
 
-- Delete Account (Delete Account)
+- Delete Account
 - Method: DELETE
 
-  - Path: localhost:8000/accounts/{account_id}
+  - Path: localhost:8000/accounts/{id}
   - Input:
+    {
 
-  ```
-  {
-      "id": 1
   }
-  ```
 
   - Output:
+    {
 
-  ```
-      true
-  ```
+  }
 
 ##### Employer Search
 
@@ -373,37 +290,49 @@ As a stretch goal, the coding game will be a 2-player coding challenge and we pl
 ##### Accounts
 
 - Update Account
-  ![Update account wireframe](updateAccount.png)
+  ![Alt text](updateAccount.png)
 
 ##### Employer Search
 
-![Employer search wireframe](employerSearch.png)
+![Alt text](employerSearch.png)
 
 ##### Coder Profile
 
-![Coder profile wireframe](profile.png)
+![Alt text](profile.png)
 
 ##### Game
 
-![Game wireframe](game.png)
+- Game
+  ![Alt text](game.png)
 
 ### Team Roles and Responsibilities
 
-- Jaime
-  - Hiring Manager view
-  - Frontend/CSS support
-- Miguel
-  - Profile page view
-  - Frontend/testing features (quality)
-  - Additional game support
-- Silvano
-  - Game page
-  - Backend/Documentation/Deployment Support
-- Kelly
-  - Account views (signup/signin/update/signout)
-  - Backend/Documentation/Project management related support
+- Jaime - Hiring Manager view - Frontend/CSS support
+- Miguel - Profile page view - Frontend/testing features (quality) - additional game support
+- Silvano - Game and game page - Backend/Documentation/Deployment Support
+- Kelly - Account views (signup/signin/update/signout) - Backend/Documentation/Project management related support
 
 Daily journals available for additional information
+
+### Niche Market
+
+Code With Me is a web application geared toward coders who want a unique, fun, and collaborative way to code with others.
+
+With the current deployment of Code With Me, a coder can create an account, sign in and play a multiple choice coder challenge to deepen their knowledge. An additional feature we have built into the app is for an employer to also have the capability to create an account and search for coders as potential hiring candidates. Within the app, a user can create an account, sign in, sign out, and update their account, as well as select whether they are a coder or an employer. Coders can add profile data, and play coding challenges. Employers can select criteria for their search query, and will see a list of coders who are open to work.
+
+The future goal behind Code With Me is to develop the app to allow coders to create an account, sign in, and start a coding challenge. For the coding challenge, or the game, two coders will be paired together, and will play a blind coding challenge with one another. During this collaborative coding challenge, each coder will be able to add a line of code, adding on to the other coder's work, and "push" their changes. Either coder will have the ability to terminate a coding session at any time, whether the coding challenge is complete, or whether they do not want to proceed. At the end of the coding challenge, each player will have the ability to add the coder they worked with as part of their "coding network", and if (and ONLY if) both coders say yes, their gitLab or gitHub username will be shared with each other.
+
+Another feature which could eventually be created as a built-in linkedIn style networking site, which is geared toward software engineers only. When coders finish a challenge they can then just choose if they want to add each other on the network platform (this would be a big stretch goals far in the future).
+
+Code With Me has the potential to add the following benefits to coders as well as employers:
+
+- A way for coders to network with other individuals in the field
+- Collaboration
+- Another tool for learning code
+- Reading other coder's code
+- Creativity
+- Data to analyze
+- Potential Interview tool
 
 ### Application Functionality
 

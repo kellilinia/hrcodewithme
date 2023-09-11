@@ -1,3 +1,47 @@
+## Sept 2, 2023
+
+Today, I worked on:
+
+- Added authentication using fetchWithCookie on Employer page
+- Completed EmployerSearch.js frontend, adding React components and click handler for search function
+
+Today I figured out how to add authentication to my frontend with fetchWithCookie, looking at the index.tsx from the jwtdown-for-react repo. It seemed a lot easier than fetchWithToken.
+
+I added React components, useState, and a click handler for when a user clicks submit to search through coder profiles. Created a table
+
+## Sept 1, 2023
+
+Today, I worked on:
+
+- Completed individual unit test
+
+With help from Zach, I realized I didn't use Depends() correctly in my router. My mock authentication could also be much simpler, and only needed to be a function that had a return for authentication. I worked through a few 422 errors, and eventually got it to pass!
+
+## Aug 31, 2023
+
+Today, I worked on:
+
+- Completed my frontend visual view of EmployerSearch.js
+- Started unit test for employer search post endpoint
+
+Today I finished updating the view for my employer search page and generally how I wanted it to look, with the buttons, search button, and table for search results.
+
+I started the unit test for my endpoint, and had a lot of trouble trying to test a protected endpoint but eventually figured it out. I have to create mock data for the authentication, as well as mock data for the unit test.
+
+Silvano finished editing all of our backend code to pass lint tests, and backend deployment!
+
+## Aug 30, 2023
+
+Today, I worked on:
+
+- Set up Frontend Authentication as a team
+- As a group, set up frontend pages for LoginForm.js and SignupForm.js
+
+Today we coded as a group with Kelly sharing her screen to create the Signup Form.
+Then Miguel drove the code while we coded together for Login Form, and set up the
+frontend authentication. We came across a few errors but were able to debug together
+and got the frontend forms working!
+
 ## Aug 29, 2023
 
 Today, I worked on:
@@ -11,9 +55,13 @@ and updating the App.js forms in ghi folder. We put template bootstrap
 code in as a placeholder so we can each work on our individual frontend
 endpoints.
 
-We came across an problem with getting bootstrap html code to show up properly, and compared it to a previous project. We added 2 bootstrap lines to index.html and it fixed the issue.
+We came across an problem with getting bootstrap html code to show up properly,
+and compared it to a previous project. We added 2 bootstrap lines to index.html
+and it fixed the issue.
 
-As a group, we decided where to place each of our links in Nav and App to minimize future merge conflicts on shared pages. Created merge request, and started React frontend for employer search!
+As a group, we decided where to place each of our links in Nav and App to
+minimize future merge conflicts on shared pages. Created merge request, and
+started React frontend for employer search!
 
 ## Aug 28, 2023
 
