@@ -51,6 +51,7 @@ def update_profile(
     repo: ProfileRepository = Depends(),
     account_data: dict = Depends(authenticator.get_current_account_data),
 ) -> Union[Error, ProfileOut]:
+    print("this is the coder_id", coder_id)
     return repo.update_profile(coder_id, profile)
 
 
@@ -62,7 +63,7 @@ def create_profile(
     return repo.create_profile(profile)
 
 
-@router.get("/profile/{account_id}", response_model=Optional[ProfileOut])
+@router.get("/profile/{coder_id}", response_model=Optional[ProfileOut])
 def get_one_profile(
     coder_id: int,
     response: Response,

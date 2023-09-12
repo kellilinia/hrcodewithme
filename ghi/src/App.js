@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { AuthProvider } from "@galvanize-inc/jwtdown-for-react";
 import EmployerSearch from "./EmployerSearch";
 import SignupForm from "./SignupForm";
 import LoginForm from "./LoginForm";
@@ -15,8 +14,7 @@ function App() {
   const basename = process.env.PUBLIC_URL.replace(domain, "");
 
   return (
-    <BrowserRouter basename={basename}>
-      <AuthProvider baseUrl={process.env.REACT_APP_API_HOST}>
+    <BrowserRouter basename={basename}> 
         <Nav />
         <div className="container">
           <Routes>
@@ -30,7 +28,6 @@ function App() {
             <Route path="/" element={<Homepage />} />
           </Routes>
         </div>
-      </AuthProvider>
     </BrowserRouter>
   );
 }

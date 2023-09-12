@@ -1,10 +1,9 @@
-import useToken from "@galvanize-inc/jwtdown-for-react";
-import { useState, useEffect } from "react";
+import  useToken  from "@galvanize-inc/jwtdown-for-react";
+import { useState} from "react";
 
 
 const ProfileForm = () => {
-    const [id, setId] = useState("")
-    const [coder_id, setCoderId] = useState("");
+    const [coder_id] = useState("");
     const [avatar_url, setAvatarUrl] = useState("");
     const [bio, setBio] = useState("");
     const [git_url, setGitUrl] = useState("");
@@ -19,33 +18,16 @@ const ProfileForm = () => {
     const [java, setJava] = useState(false);
     const [html, setHtml] = useState(false);
 
-    const { fetchWithCookie } = useToken();
+    const { fetchWithCookie, token } = useToken();
+    console.log("platform token:", token);
+    window.token = token;
+    console.log("this is the window token", window.token)
 
-    useEffect(() => {
-        const fetchInitialData = async () => {
-            try {
-                const response = await fetch(`${process.env.REACT_APP_API_HOST}/profile/${coder_id}`);
-                if (response.ok) {
-                    const data = await response.json();
- 
-                    setId(data.id);
-                    setCoderId(data.coder_id);
-                    // Set other state variables...
-                } else {
-                    // Handle error
-                }
-            } catch (error) {
-                // Handle error
-            }
-        };
-
-        fetchInitialData();
-    }, []);
-
+    const [t] = useState(token);
     const handleSubmit = async (event) => {
+        console.log("handle Submit")
         event.preventDefault();
         const data = {
-        id,
         coder_id,
         avatar_url,
         bio,
@@ -62,8 +44,25 @@ const ProfileForm = () => {
         html,
         };
 
+        const tokenUrl = `${process.env.REACT_APP_API_HOST}/token`;
+        const fetchConfigToken = {
+        method: "GET",
+        credentials: "include", 
+        }
 
-        const profileUrl = `$(process.env.REACT_APP_API_HOST)/profile/` + data.id;
+
+        const registerResponse = fetch(tokenUrl, fetchConfigToken);
+        if (registerResponse.ok) {
+        console.log("This is where the token is printed", registerResponse)
+        }
+
+        if (t !== null) {
+        let id = JSON.parse(atob(t.split(".")[1])).account.id;
+        console.log("this is the id we want:", id);
+
+        
+
+        const profileUrl = `${process.env.REACT_APP_API_HOST}/profile/${id}`;
         const fetchConfig = {
             method: "PUT",
             body: JSON.stringify(data),
@@ -74,28 +73,29 @@ const ProfileForm = () => {
         };
         
         fetchWithCookie(profileUrl, "PUT", fetchConfig);
-
+    
 
         const updateProfileResponse = await fetch(profileUrl, fetchConfig);
         if (updateProfileResponse.ok) {
             const responseData = await updateProfileResponse.json();
-            setId('');
-            setCoderId('');
-            setAvatarUrl('');
-            setBio('');
-            setGitUrl('');
-            setPersonalInterests('');
-            setCodingSince(0);
-            setOpenToWork(false);
-            setFullstack(false);
-            setFrontend(false);
-            setBackend(false);
-            setJavascript(false);
-            setPython(false);
-            setJava(false);
-            setHtml(false);
-            console.log(responseData);
-        }};
+            // setCoderId();
+            // setAvatarUrl('');
+            // setBio('');
+            // setGitUrl('');
+            // setPersonalInterests('');
+            // setCodingSince(0);
+            // setOpenToWork(false);
+            // setFullstack(false);
+            // setFrontend(false);
+            // setBackend(false);
+            // setJavascript(false);
+            // setPython(false);
+            // setJava(false);
+            // setHtml(false);
+            // console.log(responseData);
+        }
+    }
+    };
 
     
     return (
@@ -192,7 +192,7 @@ const ProfileForm = () => {
                                     </div>
                                 </form>
                                 <div>
-                                    <input className="btn btn-primary" type="submit" value="Save Changes" />
+                                    <button className="btn btn-primary" onClick={handleSubmit}>Save Changes</button>
                                 </div>
                             </div>
                         </div>
