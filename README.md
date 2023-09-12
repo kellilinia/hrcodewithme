@@ -31,7 +31,7 @@ With the current deployment of Code With Me, a coder can create an account, sign
 
 The future goal behind Code With Me is to develop the app to allow coders to create an account, sign in, and start a coding challenge. For the coding challenge, or the game, two coders will be paired together, and will play a blind coding challenge with one another. During this collaborative coding challenge, each coder will be able to add a line of code, adding on to the other coder's work, and "push" their changes. Either coder will have the ability to terminate a coding session at any time, whether the coding challenge is complete, or whether they do not want to proceed. At the end of the coding challenge, each player will have the ability to add the coder they worked with as part of their "coding network", and if (and ONLY if) both coders say yes, their gitLab or gitHub username will be shared with each other.
 
-Another feature which could eventually be created as a built-in linkedIn style networking site, which is geared toward software engineers only. When coders finish a challenge they can then just choose if they want to add each other on the network platform (this would be a big stretch goals far in the future).
+Another feature which could eventually be created as a built-in LinkedIn style networking site, which is geared toward software engineers only. When coders finish a challenge they can then just choose if they want to add each other on the network platform (this would be a big stretch goal far in the future).
 
 Code With Me has the potential to add the following benefits to coders as well as employers:
 
@@ -372,8 +372,7 @@ As a stretch goal, the coding game will be a 2-player coding challenge and we pl
 
 ##### Accounts
 
-- Update Account
-  ![Update account wireframe](updateAccount.png)
+![Update account wireframe](updateAccount.png)
 
 ##### Employer Search
 
@@ -395,7 +394,6 @@ As a stretch goal, the coding game will be a 2-player coding challenge and we pl
 - Miguel
   - Profile page view
   - Frontend/testing features (quality)
-  - Additional game support
 - Silvano
   - Game page
   - Backend/Documentation/Deployment Support
